@@ -20,12 +20,12 @@ const Board: React.FC<BoardProps> = ({ allDice, isGameWon, rollDicesHandler, hol
   ));
 
   return (
-    <>
+    <section>
       <div id="dices-container">{dice}</div>
       <button id="roll-dices-btn" onClick={rollDicesHandler}>
         {isGameWon ? 'Play again' : 'Roll'}
       </button>
-    </>
+    </section>
   );
 };
 export default Board;

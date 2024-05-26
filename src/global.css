@@ -27,26 +27,41 @@ body {
   font-weight: 400;
 }
 
-div#root {
+main#root {
   display: flex;
+  justify-content: center;
   height: inherit;
 }
 
-main {
+article {
   box-shadow: var(--main-box-shadow);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-self: center;
   width: 50%;
-  margin: 0 auto;
+  max-width: 800px;
   padding: 75px 50px;
   background-color: var(--main-board-color);
   border-radius: var(--main-border-radius);
 }
 
+article section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+}
+
 h1#title {
   margin-bottom: 15px;
+  font-size: 36px;
 }
 
 p#instructions {
@@ -56,11 +71,9 @@ p#instructions {
 }
 
 div#dices-container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
   gap: 25px;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 div#dices-container button {
@@ -99,13 +112,26 @@ button#roll-dices-btn {
   color: var(--main-die-color);
 }
 
-@media screen and (max-width: 768px) {
-  main {
-    height: initial;
+@media screen and (max-width: 1366px) {
+  section,
+  article,
+  div#dices-container {
+    width: inherit;
   }
-  main {
-    width: 100%;
+  article {
+    height: initial;
     margin: 25px;
     padding: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div#dices-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 550px) {
+  div#dices-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

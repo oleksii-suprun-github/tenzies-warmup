@@ -64,7 +64,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <main>
+    <article>
       <GameDescription />
       <Board
         allDice={allDice}
@@ -73,7 +73,7 @@ const App: React.FC = () => {
         isGameWon={isGameWon}
       />
       {isGameWon && <Confetti width={width} height={height} />}
-    </main>
+    </article>
   );
 };
 const container = document.getElementById('root');
