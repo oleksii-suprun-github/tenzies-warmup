@@ -82,6 +82,8 @@ div#dices-container button {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-self: center;
+  align-self: center;
   width: 100px;
   height: 100px;
   background-color: var(--main-die-color);
@@ -111,7 +113,14 @@ button#roll-dices-btn {
   font-weight: bold;
   color: var(--main-die-color);
 }
-
+@media screen and (max-width: 600px) {
+  body {
+    height: inherit;
+  }
+  div#dices-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media screen and (max-width: 1366px) {
   section,
   article,
@@ -125,13 +134,8 @@ button#roll-dices-btn {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 601px) {
   div#dices-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media screen and (max-width: 550px) {
-  div#dices-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
