@@ -4,11 +4,12 @@ import { Dice } from 'types';
 
 interface BoardProps {
   allDice: Dice[];
+  isGameWon: boolean;
   rollDicesHandler: void;
   holdDieHandler: void;
 }
 
-const Board: React.FC<BoardProps> = ({ allDice, rollDicesHandler, holdDieHandler }) => {
+const Board: React.FC<BoardProps> = ({ allDice, isGameWon, rollDicesHandler, holdDieHandler }) => {
   const dice = allDice.map((die) => (
     <Die
       key={die.id}
@@ -22,7 +23,7 @@ const Board: React.FC<BoardProps> = ({ allDice, rollDicesHandler, holdDieHandler
     <>
       <div id="dices-container">{dice}</div>
       <button id="roll-dices-btn" onClick={rollDicesHandler}>
-        Roll
+        {isGameWon ? 'Play again' : 'Roll'}
       </button>
     </>
   );
