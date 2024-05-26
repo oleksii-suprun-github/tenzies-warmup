@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { nanoid } from 'nanoid';
-import GameDescription from 'Components/GameDescription';
+import GameDescription from './Components/GameDescription';
 import Board from './Components/Board';
 import { Dice } from 'types';
 

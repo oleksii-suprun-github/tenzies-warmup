@@ -19,12 +19,12 @@ const Board: React.FC<BoardProps> = ({ allDice, rollDicesHandler, holdDieHandler
   ));
 
   return (
-    <main>
+    <>
       <div id="dices-container">{dice}</div>
       <button id="roll-dices-btn" onClick={rollDicesHandler}>
         Roll
       </button>
-    </main>
+    </>
   );
 };
 export default Board;
