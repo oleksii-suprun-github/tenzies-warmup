@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { nanoid } from 'nanoid';
+import GameDescription from 'Components/GameDescription';
 import Board from './Components/Board';
 import { Dice } from 'types';
 
@@ -45,7 +46,14 @@ const App: React.FC = () => {
   }
 
   return (
-    <Board allDice={allDice} holdDieHandler={holdDieHandler} rollDicesHandler={rollDicesHandler} />
+    <main>
+      <GameDescription />
+      <Board
+        allDice={allDice}
+        holdDieHandler={holdDieHandler}
+        rollDicesHandler={rollDicesHandler}
+      />
+    </main>
   );
 };
 const container = document.getElementById('root');

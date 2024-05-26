@@ -36,12 +36,23 @@ main {
   box-shadow: var(--main-box-shadow);
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-self: center;
   width: 50%;
   margin: 0 auto;
   padding: 75px 50px;
   background-color: var(--main-board-color);
   border-radius: var(--main-border-radius);
+}
+
+h1#title {
+  margin-bottom: 15px;
+}
+
+p#instructions {
+  margin-bottom: 50px;
+  font-size: 18px;
+  text-align: center;
 }
 
 div#dices-container {
@@ -74,21 +85,20 @@ div#dices-container button.held {
 
 button#roll-dices-btn {
   outline: none;
+  box-shadow: var(--main-box-shadow);
   margin: 0 auto;
   margin-top: 50px;
   padding: 15px 30px;
-  color: var(--main-die-color);
   background-color: var(--main-button-color);
+  cursor: pointer;
   border: 0;
   border-radius: var(--main-border-radius);
   font-size: 24px;
   font-weight: bold;
-  cursor: pointer;
-  box-shadow: var(--main-box-shadow);
+  color: var(--main-die-color);
 }
 
 @media screen and (max-width: 768px) {
-  body,
   main {
     height: initial;
   }
