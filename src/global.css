@@ -88,10 +88,11 @@ p#description {
 }
 
 select#difficulty {
+  outline: none;
   margin-top: 25px;
-  font-size: 16px;
   padding: 12px 20px;
   border-radius: 10px;
+  font-size: 16px;
 }
 
 div#dice-container {
@@ -107,8 +108,10 @@ button.die {
   box-shadow: var(--main-box-shadow);
   justify-self: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 22px;
   align-self: center;
   width: 100px;
   height: 100px;
@@ -119,6 +122,39 @@ button.die {
   font-size: 42px;
   font-weight: bold;
   color: var(--main-font-color);
+}
+
+div.pip {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+div.pips-4,
+div.pips-5 {
+  position: relative;
+}
+
+div.pips-4.pip-index-2 {
+  bottom: -61px;
+  left: -32px;
+}
+
+div.pips-4.pip-index-4 {
+  right: -31px;
+}
+
+div.pips-5.pip-index-2 {
+  top: 30px;
+}
+
+div.pips-5.pip-index-4 {
+  left: -15px;
+}
+
+div.pips-5.pip-index-5 {
+  right: -15px;
 }
 
 button.held {
@@ -152,8 +188,8 @@ button#roll-dice-btn {
     top: unset;
     left: unset;
     right: 0;
-    text-align: right;
     margin-bottom: 25px;
+    text-align: right;
   }
 }
 
