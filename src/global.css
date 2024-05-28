@@ -39,6 +39,7 @@ article {
   flex-wrap: wrap;
   justify-content: center;
   align-self: center;
+  position: relative;
   width: 50%;
   max-width: 800px;
   padding: 75px 50px;
@@ -46,15 +47,22 @@ article {
   border-radius: var(--main-border-radius);
 }
 
-article section {
-  width: 100%;
+article > section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
-header {
+article > div#game-timer {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 18px;
+}
+
+header#header {
   width: 100%;
   text-align: center;
 }
@@ -64,25 +72,35 @@ h1#title {
   font-size: 36px;
 }
 
-p#instructions {
-  margin-bottom: 50px;
+div#results {
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+div#results p:first-child {
+  margin-bottom: 10px;
+}
+
+p#description {
   font-size: 18px;
   text-align: center;
 }
 
-div#dices-container {
+div#dice-container {
   display: grid;
   gap: 25px;
   grid-template-columns: repeat(5, 1fr);
+  margin-top: 25px;
+  margin-bottom: 50px;
 }
 
-div#dices-container button {
+button.die {
   outline: none;
   box-shadow: var(--main-box-shadow);
+  justify-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-self: center;
   align-self: center;
   width: 100px;
   height: 100px;
@@ -95,11 +113,11 @@ div#dices-container button {
   color: var(--main-font-color);
 }
 
-div#dices-container button.held {
+button.held {
   background-color: var(--main-die-color--active);
 }
 
-button#roll-dices-btn {
+button#roll-dice-btn {
   outline: none;
   box-shadow: var(--main-box-shadow);
   margin: 0 auto;
@@ -113,18 +131,15 @@ button#roll-dices-btn {
   font-weight: bold;
   color: var(--main-die-color);
 }
+
 @media screen and (max-width: 600px) {
-  body {
-    height: inherit;
-  }
-  div#dices-container {
+  div#dice-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media screen and (max-width: 1366px) {
-  section,
-  article,
-  div#dices-container {
+  div#dice-container {
     width: inherit;
   }
   article {
@@ -135,7 +150,7 @@ button#roll-dices-btn {
 }
 
 @media screen and (min-width: 601px) {
-  div#dices-container {
+  div#dice-container {
     grid-template-columns: repeat(5, 1fr);
   }
 }

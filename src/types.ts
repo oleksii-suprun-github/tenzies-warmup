@@ -3,3 +3,8 @@ export type Dice = {
   value: number;
   isHeld: boolean;
 };
+
+export type Difficulty = {
+  label: string;
+  value: number;
+};

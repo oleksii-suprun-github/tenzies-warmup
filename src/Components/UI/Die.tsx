@@ -10,7 +10,7 @@ const Die: React.FC = ({ holdDieHandler, isHeld, value }) => {
   const hasHeldClass = isHeld ? 'held' : '';
 
   return (
-    <button className={hasHeldClass} onClick={holdDieHandler}>
+    <button className={`die ${hasHeldClass}`} onClick={holdDieHandler}>
       {value}
     </button>
   );

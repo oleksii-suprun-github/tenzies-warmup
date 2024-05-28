@@ -1,31 +1,46 @@
 import React from 'react';
-import Die from './Die';
+import { getRollDiceBtnLabel } from '../utils';
+import Header from './UI/Header';
+import Die from './UI/Die';
+import RollDiceButton from './UI/RollDiceButton';
 import { Dice } from 'types';
 
 interface BoardProps {
   allDice: Dice[];
   isGameWon: boolean;
+  isGameStarted: boolean;
   rollDicesHandler: void;
   holdDieHandler: void;
 }
 
-const Board: React.FC<BoardProps> = ({ allDice, isGameWon, rollDicesHandler, holdDieHandler }) => {
-  const dice = allDice.map((die) => (
-    <Die
-      key={die.id}
-      holdDieHandler={() => holdDieHandler(die.id)}
-      isHeld={die.isHeld}
-      value={die.value}
-    />
-  ));
+const Board: React.FC<BoardProps> = ({
+  allDice,
+  isGameWon,
+  isGameStarted,
+  rollDicesHandler,
+  holdDieHandler,
+}) => {
+  const dice = allDice.length
+    ? allDice.map((die) => (
+        <Die
+          key={die.id}
+          holdDieHandler={() => holdDieHandler(die.id)}
+          isHeld={die.isHeld}
+          value={die.value}
+        />
+      ))
+    : null;
+
+  let buttonLabel = getRollDiceBtnLabel(isGameStarted, isGameWon);
 
   return (
-    <section>
-      <div id="dices-container">{dice}</div>
-      <button id="roll-dices-btn" onClick={rollDicesHandler}>
-        {isGameWon ? 'Play again' : 'Roll'}
-      </button>
-    </section>
+    <>
+      <Header title="Match 10 dice" />
+      <section>
+        {dice && <div id="dice-container">{dice}</div>}
+        <RollDiceButton onClick={rollDicesHandler}>{buttonLabel}</RollDiceButton>
+      </section>
+    </>
   );
 };
 export default Board;
