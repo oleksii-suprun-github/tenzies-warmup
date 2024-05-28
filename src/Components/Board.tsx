@@ -3,10 +3,11 @@ import { getRollDiceBtnLabel } from '../utils';
 import Header from './UI/Header';
 import Die from './UI/Die';
 import RollDiceButton from './UI/RollDiceButton';
-import { Dice } from 'types';
+import { Dice, Difficulty } from 'types';
 
 interface BoardProps {
   allDice: Dice[];
+  difficulty: Difficulty;
   isGameWon: boolean;
   isGameStarted: boolean;
   rollDicesHandler: void;
@@ -15,6 +16,7 @@ interface BoardProps {
 
 const Board: React.FC<BoardProps> = ({
   allDice,
+  difficulty,
   isGameWon,
   isGameStarted,
   rollDicesHandler,
@@ -35,7 +37,7 @@ const Board: React.FC<BoardProps> = ({
 
   return (
     <>
-      <Header title="Match 10 dice" />
+      <Header title={`Match ${difficulty.value} dice`} />
       <section>
         {dice && <div id="dice-container">{dice}</div>}
         <RollDiceButton onClick={rollDicesHandler}>{buttonLabel}</RollDiceButton>

@@ -17,7 +17,7 @@ const GameResults: React.Fc = ({ timeTotal, clicksTotal, restartHandler }): Game
           Total Time: <strong>{timeTotal} seconds</strong>
         </p>
         <p>
-          Total clicks: <strong>{clicksTotal} clicks</strong>
+          Total Clicks: <strong>{clicksTotal} clicks</strong>
         </p>
       </div>
       <RollDiceButton onClick={restartHandler}>Start again</RollDiceButton>

@@ -4,12 +4,12 @@ import { Dice } from 'types';
 export const Difficulties = [
   { label: 'easy', value: 5 },
   { label: 'normal', value: 10 },
-  { lalbel: 'hard', value: 15 },
+  { label: 'hard', value: 15 },
 ];
 
 export const getRandomDieValue = () => Math.ceil(Math.random() * 6);
 
-export const setNewDice = (difficulty: number = 10) => {
+export const setNewDiceSet = (difficulty: number = 10) => {
   let dicesArr: Dice[] = [];
   for (let i = 0; i < difficulty; i++) {
     dicesArr.push({ id: nanoid(), value: getRandomDieValue(), isHeld: false });

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import useWindowSize from 'react-use/lib/useWindowSize';
 import Confetti from 'react-confetti';
-import { Difficulties, getRandomDieValue, setNewDice } from './utils';
+import { Difficulties, getRandomDieValue, setNewDiceSet } from './utils';
 import GameDescription from './Components/GameDescription';
 import GameTimer from './Components/UI/GameTimer';
 import GameResults from './Components/GameResults';
@@ -46,6 +46,11 @@ const App: React.FC = () => {
     }
   }, [allDice, isGameStarted, isGameWon]);
 
+  function difficultyHandler(difficultyLabel) {
+    console.log(Difficulties.find((item) => item.label === difficultyLabel));
+    setDifficulty(Difficulties.find((item) => item.label === difficultyLabel));
+  }
+
   function rollDicesHandler() {
     if (isGameStarted) {
       setAllDice((prevAllDice) => {
@@ -69,7 +74,7 @@ const App: React.FC = () => {
       setGameStarted(true);
       setGameTime(0);
       setClicks(0);
-      setAllDice(setNewDice());
+      setAllDice(setNewDiceSet(difficulty.value));
     }
   }
 
@@ -98,12 +103,15 @@ const App: React.FC = () => {
               allDice={allDice}
               isGameStarted={isGameStarted}
               isGameWon={isGameWon}
+              difficulty={difficulty}
               holdDieHandler={holdDieHandler}
               rollDicesHandler={rollDicesHandler}
             />
           </>
         )}
-        {!isGameStarted && <GameDescription startHandler={rollDicesHandler} />}
+        {!isGameStarted && (
+          <GameDescription difficultyHandler={difficultyHandler} startHandler={rollDicesHandler} />
+        )}
         {isGameWon && (
           <GameResults
             timeTotal={gameTime}
