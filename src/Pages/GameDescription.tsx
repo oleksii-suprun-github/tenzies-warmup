@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './UI/Header';
-import RecordsTable from './UI/RecordsTable';
-import DifficultySelector from './UI/DifficultySelector';
-import RollDiceButton from './UI/RollDiceButton';
+import Header from '../Components/Header';
+import RecordsTable from '../Components/RecordsTable';
+import DifficultySelector from '../Components/DifficultySelector';
+import RollDiceButton from '../Components/RollDiceButton';
 import { Record } from 'types';
 
 interface GameDescription {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { getGameSessionTime } from '../../utils';
+import { getGameSessionTime } from '../utils';
 import { Record } from 'types';
 
 const RecordElement: React.FC = ({ data, index }: { data: Record; index: number }) => {
@@ -13,7 +13,7 @@ const RecordElement: React.FC = ({ data, index }: { data: Record; index: number 
       <td>{gameSessionTime}</td>
       <td>{difficultyLabel}</td>
       <td>{data.gameClicks}</td>
-      <td>{data.gameTime}</td>
+      <td>{data.gameTime}s</td>
     </tr>
   );
 };

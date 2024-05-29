@@ -1,6 +1,6 @@
 import React from 'react';
-import RollDiceButton from './UI/RollDiceButton';
-import Header from './UI/Header';
+import RollDiceButton from '../Components/RollDiceButton';
+import Header from '../Components/Header';
 
 interface GameResults {
   timeTotal: number;

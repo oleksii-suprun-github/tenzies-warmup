@@ -4,10 +4,10 @@ import useWindowSize from 'react-use/lib/useWindowSize';
 import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
 import { Difficulties, filterRecords, getRandomDieValue, setNewDiceSet } from './utils';
-import GameDescription from './Components/GameDescription';
-import GameTimer from './Components/UI/GameTimer';
-import GameResults from './Components/GameResults';
-import Board from './Components/Board';
+import GameDescription from './Pages/GameDescription';
+import GameTimer from './Components/GameTimer';
+import GameResults from './Pages/GameResults';
+import Board from './Pages/Board';
 import { Dice, Difficulty } from 'types';
 
 const App: React.FC = () => {
