@@ -4,7 +4,15 @@ A simple warm-up React project to implement the game Tenzies.
 
 ## Project Description
 
+![Project Screenshot](./app-demo.png)
+
 Tenzies Warm-up is a simple React project designed to refresh React skills by recreating the Tenzies game.
+
+### Features
+
+- Three difficulty modes: Easy, Normal, Hard
+- Tracks time and number of clicks needed to win
+- Displays top 5 best results on the dashboard
 
 ## Table of Contents
 
