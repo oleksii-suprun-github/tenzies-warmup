@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import useWindowSize from 'react-use/lib/useWindowSize';
+import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
-import { Difficulties, getRandomDieValue, setNewDiceSet } from './utils';
+import { Difficulties, filterRecords, getRandomDieValue, setNewDiceSet } from './utils';
 import GameDescription from './Components/GameDescription';
 import GameTimer from './Components/UI/GameTimer';
 import GameResults from './Components/GameResults';
@@ -10,6 +11,9 @@ import Board from './Components/Board';
 import { Dice, Difficulty } from 'types';
 
 const App: React.FC = () => {
+  const STORAGE_VARIABLE = 'tenzies-wins-records';
+  const recordsFromStorage = localStorage.getItem(STORAGE_VARIABLE);
+
   const { width, height } = useWindowSize();
 
   const [difficulty, setDifficulty] = useState<Difficulty>(Difficulties[1]);
@@ -19,9 +23,11 @@ const App: React.FC = () => {
   const [isGameWon, setGameWon] = useState<Boolean>(false);
   const [isGameStarted, setGameStarted] = useState<Boolean>(false);
 
-  const [recordsList, setRecordsList] = useState(null);
+  const [recordsList, setRecordsList] = useState(
+    (recordsFromStorage && JSON.parse(recordsFromStorage)) || [],
+  );
   const [gameTime, setGameTime] = useState<Number>(0);
-  const [clicks, setClicks] = useState<Number>(0);
+  const [gameClicks, setGameClicks] = useState<Number>(0);
 
   useEffect(() => {
     let gameTimer;
@@ -41,13 +47,32 @@ const App: React.FC = () => {
       );
 
       if (isAllDiceEqual) {
+        setRecordsList((prevRecordsList) =>
+          filterRecords([
+            {
+              id: nanoid(),
+              date: new Date().toString(),
+              difficultyLabel: difficulty.label,
+              gameTime: gameTime,
+              gameClicks: gameClicks,
+            },
+            ...prevRecordsList,
+          ]),
+        );
+
         setGameWon(true);
+        setDifficulty(Difficulties[1]);
       }
     }
   }, [allDice, isGameStarted, isGameWon]);
 
+  useEffect(() => {
+    if (isGameWon) {
+      localStorage.setItem(STORAGE_VARIABLE, JSON.stringify(recordsList));
+    }
+  }, [recordsList, isGameWon]);
+
   function difficultyHandler(difficultyLabel) {
-    console.log(Difficulties.find((item) => item.label === difficultyLabel));
     setDifficulty(Difficulties.find((item) => item.label === difficultyLabel));
   }
 
@@ -73,13 +98,13 @@ const App: React.FC = () => {
     } else {
       setGameStarted(true);
       setGameTime(0);
-      setClicks(0);
+      setGameClicks(0);
       setAllDice(setNewDiceSet(difficulty.value));
     }
   }
 
   function holdDieHandler(id) {
-    setClicks((prevClicks) => prevClicks + 1);
+    setGameClicks((prevClicks) => prevClicks + 1);
     setAllDice((prevAllDice) => {
       return prevAllDice.map((die) => {
         if (die.id === id) {
@@ -110,12 +135,18 @@ const App: React.FC = () => {
           </>
         )}
         {!isGameStarted && (
-          <GameDescription difficultyHandler={difficultyHandler} startHandler={rollDicesHandler} />
+          <>
+            <GameDescription
+              records={recordsList}
+              difficultyHandler={difficultyHandler}
+              startHandler={rollDicesHandler}
+            />
+          </>
         )}
         {isGameWon && (
           <GameResults
             timeTotal={gameTime}
-            clicksTotal={clicks}
+            clicksTotal={gameClicks}
             restartHandler={rollDicesHandler}
           />
         )}

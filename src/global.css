@@ -69,7 +69,7 @@ header#header {
 }
 
 h1#title {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-size: 36px;
 }
 
@@ -87,8 +87,49 @@ p#description {
   text-align: center;
 }
 
-select#difficulty {
+section#records-list,
+section#difficulty {
+  margin-top: 35px;
+}
+
+section#records-list h2 {
+  margin-bottom: 15px;
+}
+
+div#records-table-responsive-wrapper {
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  overflow-x: auto;
+  width: 100%;
+}
+
+table#records-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table#records-table th,
+table#records-table td {
+  padding: 5px;
+  border: 1px solid var(--main-board-color);
+}
+table#records-table th {
+  background-color: var(--main-button-color);
+  color: var(--main-die-color);
+}
+
+table#records-table td {
+  border-bottom-color: var(--main-font-color);
+}
+
+table#records-table td {
+  text-align: center;
+}
+
+select#difficulty-selector {
   outline: none;
+  width: fit-content;
+  margin: 0 auto;
   margin-top: 25px;
   padding: 12px 20px;
   border-radius: 10px;
