@@ -46,58 +46,65 @@ article {
   padding: 75px 50px;
   background-color: var(--main-board-color);
   border-radius: var(--main-border-radius);
-}
 
-article > section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
+  > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 
-article > div#game-timer {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  font-size: 18px;
+  > div#game-timer {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 1366px) {
+    width: 90%;
+    height: initial;
+    margin: 25px;
+    padding: 25px;
+  }
 }
 
 header#header {
   width: 100%;
   text-align: center;
-}
 
-header#header h1 {
-  margin-bottom: 25px;
-  font-size: 36px;
-}
+  h1 {
+    margin-bottom: 25px;
+    font-size: 36px;
+  }
 
-header#header p {
-  font-size: 18px;
-  text-align: center;
+  p {
+    font-size: 18px;
+    text-align: center;
+  }
 }
 
 div#results {
   margin: 0 auto;
   margin-top: 50px;
-}
 
-div#results p:first-child {
-  margin-bottom: 10px;
+  p:first-child {
+    margin-bottom: 10px;
+  }
 }
 
 section#records-list,
 section#difficulty {
   margin-top: 35px;
-}
 
-section#difficulty h2 {
-  text-align: center;
-}
+  h2 {
+    text-align: center;
+  }
 
-section#records-list h2 {
-  margin-bottom: 15px;
+  & h2 {
+    margin-bottom: 15px;
+  }
 }
 
 div#records-table-responsive-wrapper {
@@ -110,32 +117,28 @@ div#records-table-responsive-wrapper {
 table#records-table {
   border-collapse: collapse;
   width: 100%;
-}
 
-table#records-table th,
-table#records-table td {
-  padding: 5px;
-  border: 1px solid var(--main-board-color);
-}
-table#records-table th {
-  background-color: var(--main-button-color);
-  color: var(--main-die-color);
-}
+  th,
+  td {
+    padding: 5px;
+    border: 1px solid var(--main-board-color);
+    text-align: center;
+  }
 
-table#records-table th:first-of-type {
-  border-top-left-radius: 35px;
-}
+  th {
+    background-color: var(--main-button-color);
+    color: var(--main-die-color);
+    &:first-of-type {
+      border-top-left-radius: 35px;
+    }
+    &:last-of-type {
+      border-top-right-radius: 35px;
+    }
+  }
 
-table#records-table th:last-of-type {
-  border-top-right-radius: 35px;
-}
-
-table#records-table td {
-  border-bottom-color: var(--main-font-color);
-}
-
-table#records-table td {
-  text-align: center;
+  td {
+    border-bottom-color: var(--main-font-color);
+  }
 }
 
 select#difficulty-selector {
@@ -154,6 +157,22 @@ div#dice-container {
   grid-template-columns: repeat(5, 1fr);
   margin-top: 25px;
   margin-bottom: 50px;
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 450px) and (max-width: 767px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (min-width: 601px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 button.die {
@@ -175,6 +194,10 @@ button.die {
   font-size: 42px;
   font-weight: bold;
   color: var(--main-font-color);
+
+  &.held {
+    background-color: var(--main-die-color--active);
+  }
 }
 
 div.pip {
@@ -182,36 +205,33 @@ div.pip {
   height: 10px;
   background-color: #000;
   border-radius: 50%;
-}
 
-div.pips-4,
-div.pips-5 {
-  position: relative;
-}
+  &.pips-4,
+  &.pips-5 {
+    position: relative;
+  }
 
-div.pips-4.pip-index-2 {
-  bottom: -61px;
-  left: -32px;
-}
+  .pips-4 {
+    &.pip-index-2 {
+      bottom: -61px;
+      left: -32px;
+    }
+    &.pip-index-4 {
+      right: -31px;
+    }
+  }
 
-div.pips-4.pip-index-4 {
-  right: -31px;
-}
-
-div.pips-5.pip-index-2 {
-  top: 30px;
-}
-
-div.pips-5.pip-index-4 {
-  left: -15px;
-}
-
-div.pips-5.pip-index-5 {
-  right: -15px;
-}
-
-button.held {
-  background-color: var(--main-die-color--active);
+  .pips-5 {
+    &.pip-index-2 {
+      top: 30px;
+    }
+    &.pip-index-4 {
+      left: -15px;
+    }
+    &.pip-index-5 {
+      right: -15px;
+    }
+  }
 }
 
 button#roll-dice-btn {
@@ -233,52 +253,22 @@ button#roll-dice-btn {
   body {
     height: initial;
   }
-  div#dice-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  article > div#game-timer {
-    position: relative;
-    top: unset;
-    left: unset;
-    right: 0;
-    margin-bottom: 25px;
-    text-align: right;
-  }
-  table#records-table th:first-of-type {
-    border-top-left-radius: 15px;
-  }
-
-  table#records-table th:last-of-type {
-    border-top-right-radius: 15px;
-  }
-}
-
-@media (min-width: 450px) and (max-width: 767px) {
-  div#dice-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media screen and (max-width: 1366px) {
-  div#dice-container {
-    width: inherit;
-  }
   article {
-    width: 90%;
-    height: initial;
-    margin: 25px;
-    padding: 25px;
-  }
-}
+    > div#game-timer {
+      position: relative;
+      top: unset;
+      left: unset;
+      right: 0;
+      margin-bottom: 25px;
+      text-align: right;
+    }
 
-@media screen and (min-width: 601px) {
-  div#dice-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+    table#records-table th:first-of-type {
+      border-top-left-radius: 15px;
+    }
 
-@media screen and (min-width: 768px) {
-  div#dice-container {
-    grid-template-columns: repeat(5, 1fr);
+    table#records-table th:last-of-type {
+      border-top-right-radius: 15px;
+    }
   }
 }
