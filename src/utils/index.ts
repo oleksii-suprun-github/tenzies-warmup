@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import { Dice, Record } from 'types';
+import { orderBy, take } from 'lodash';
 
 export const Difficulties = [
   { label: 'easy', value: 5 },
@@ -18,14 +19,7 @@ export const setNewDiceSet = (difficulty: number = 10): Dice[] => {
 };
 
 export const filterRecords = (records: Record[]) => {
-  return records
-    .sort((a, b) => {
-      if (a.gameClicks === b.gameClicks) {
-        return a.gameTime - b.gameTime;
-      }
-      return a.gameClicks - b.gameClicks;
-    })
-    .slice(0, 5);
+  return take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
 };
 
 export const getGameSessionTime = (timestamp: string): string => {
