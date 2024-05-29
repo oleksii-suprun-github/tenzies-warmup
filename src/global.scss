@@ -142,13 +142,19 @@ table#records-table {
 }
 
 select#difficulty-selector {
+  appearance: none;
   outline: none;
   width: fit-content;
-  margin: 0 auto;
-  margin-top: 25px;
+  margin: 25px auto 0;
   padding: 12px 20px;
-  border-radius: 10px;
+  padding-right: 30px;
   font-size: 16px;
+  border-radius: 10px;
+  background-color: white;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%204%205%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M2%200L0%202h4zm0%205L0%203h4z%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
 }
 
 div#dice-container {
