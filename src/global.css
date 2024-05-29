@@ -92,6 +92,10 @@ section#difficulty {
   margin-top: 35px;
 }
 
+section#difficulty h2 {
+  text-align: center;
+}
+
 section#records-list h2 {
   margin-bottom: 15px;
 }
@@ -116,6 +120,14 @@ table#records-table td {
 table#records-table th {
   background-color: var(--main-button-color);
   color: var(--main-die-color);
+}
+
+table#records-table th:first-of-type {
+  border-top-left-radius: 35px;
+}
+
+table#records-table th:last-of-type {
+  border-top-right-radius: 35px;
 }
 
 table#records-table td {
@@ -231,6 +243,13 @@ button#roll-dice-btn {
     right: 0;
     margin-bottom: 25px;
     text-align: right;
+  }
+  table#records-table th:first-of-type {
+    border-top-left-radius: 15px;
+  }
+
+  table#records-table th:last-of-type {
+    border-top-right-radius: 15px;
   }
 }
 
