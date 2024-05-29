@@ -11,7 +11,10 @@ interface GameResults {
 const GameResults: React.Fc = ({ timeTotal, clicksTotal, restartHandler }): GameResults => {
   return (
     <>
-      <Header title="Congratulation!" description="You won the game!" />
+      <Header>
+        <h1>Congratulation</h1>
+        <p>You won the game!</p>
+      </Header>
       <div id="results">
         <p>
           Total Time: <strong>{timeTotal} seconds</strong>

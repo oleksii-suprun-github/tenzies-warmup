@@ -37,7 +37,9 @@ const Board: React.FC<BoardProps> = ({
 
   return (
     <>
-      <Header title={`Match ${difficulty.value} dice`} />
+      <Header>
+        <h1>{`Match ${difficulty.value} dice`}</h1>
+      </Header>
       <section>
         {dice && <div id="dice-container">{dice}</div>}
         <RollDiceButton onClick={rollDicesHandler}>{buttonLabel}</RollDiceButton>

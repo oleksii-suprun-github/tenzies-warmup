@@ -13,11 +13,13 @@ interface GameDescription {
 
 const GameDescription: React.FC = ({ startHandler, difficultyHandler, records }) => (
   <>
-    <Header
-      title="🎲 Tenzies"
-      description="Roll until all dice are the same. Click each die to freeze it at its current value between
-    rolls."
-    />
+    <Header>
+      <h1>🎲 Tenzies</h1>
+      <p>
+        Roll until all dice are the same. Click each die to freeze it at its current value between
+        rolls.
+      </p>
+    </Header>
     {!!records.length && <RecordsTable data={records} />}
     <DifficultySelector difficultyHandler={difficultyHandler} />
     <RollDiceButton onClick={startHandler}>Start the game</RollDiceButton>
