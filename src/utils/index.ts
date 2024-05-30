@@ -18,6 +18,18 @@ export const setNewDiceSet = (difficulty: number = 10): Dice[] => {
   return dicesArr;
 };
 
+export const diceHoldHandler = (dice) => {
+  return dice.map((die) => {
+    if (!die.isHeld) {
+      return {
+        ...die,
+        value: getRandomDieValue(),
+      };
+    }
+    return die;
+  });
+}
+
 export const filterRecords = (records: Record[]) => {
   return take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
 };

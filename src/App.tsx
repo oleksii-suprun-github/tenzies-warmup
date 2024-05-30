@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import useWindowSize from 'react-use/lib/useWindowSize';
 import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
-import { Difficulties, filterRecords, getRandomDieValue, setNewDiceSet } from './utils';
+import { Difficulties, diceHoldHandler, filterRecords, setNewDiceSet } from './utils';
 import GameDescription from './Pages/GameDescription';
 import GameTimer from './Components/GameTimer';
 import GameResults from './Pages/GameResults';
@@ -84,15 +84,7 @@ const App: React.FC = () => {
           setGameStarted(false);
           return [];
         } else {
-          return prevAllDice.map((die) => {
-            if (!die.isHeld) {
-              return {
-                ...die,
-                value: getRandomDieValue(),
-              };
-            }
-            return die;
-          });
+          return diceHoldHandler(prevAllDice); 
         }
       });
     } else {
@@ -135,13 +127,11 @@ const App: React.FC = () => {
           </>
         )}
         {!isGameStarted && (
-          <>
             <GameDescription
               records={recordsList}
               difficultyHandler={difficultyHandler}
               startHandler={rollDicesHandler}
             />
-          </>
         )}
         {isGameWon && (
           <GameResults
