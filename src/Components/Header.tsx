@@ -1,6 +1,4 @@
 import React from 'react';
 
-const Header: React.FC = ({ children }) => {
-  return <header id="header">{children}</header>;
-};
+const Header: React.FC = ({ children }) => <header id="header">{children}</header>;
 export default Header;

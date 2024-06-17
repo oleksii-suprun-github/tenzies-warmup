@@ -1,12 +1,12 @@
 import React from 'react';
 
-interface Die {
+interface DieProps {
   holdDieHandler: void;
   isHeld: boolean;
   value: number;
 }
 
-const Die: React.FC = ({ holdDieHandler, isHeld, value: pipsAmount }) => {
+const Die: React.FC = ({ holdDieHandler, isHeld, value: pipsAmount }: DieProps) => {
   const hasHeldClass = isHeld ? 'held' : '';
   let diePips: Element[] = [];
   for (let i = 1; i <= pipsAmount; i++) {

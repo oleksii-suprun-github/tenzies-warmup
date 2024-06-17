@@ -84,7 +84,7 @@ const App: React.FC = () => {
           setGameStarted(false);
           return [];
         } else {
-          return diceHoldHandler(prevAllDice); 
+          return diceHoldHandler(prevAllDice);
         }
       });
     } else {
@@ -97,8 +97,8 @@ const App: React.FC = () => {
 
   function holdDieHandler(id) {
     setGameClicks((prevClicks) => prevClicks + 1);
-    setAllDice((prevAllDice) => {
-      return prevAllDice.map((die) => {
+    setAllDice((prevAllDice) =>
+      prevAllDice.map((die) => {
         if (die.id === id) {
           return {
             ...die,
@@ -106,8 +106,8 @@ const App: React.FC = () => {
           };
         }
         return die;
-      });
-    });
+      }),
+    );
   }
 
   return (
@@ -127,11 +127,11 @@ const App: React.FC = () => {
           </>
         )}
         {!isGameStarted && (
-            <GameDescription
-              records={recordsList}
-              difficultyHandler={difficultyHandler}
-              startHandler={rollDicesHandler}
-            />
+          <GameDescription
+            records={recordsList}
+            difficultyHandler={difficultyHandler}
+            startHandler={rollDicesHandler}
+          />
         )}
         {isGameWon && (
           <GameResults

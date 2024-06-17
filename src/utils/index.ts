@@ -18,8 +18,8 @@ export const setNewDiceSet = (difficulty: number = 10): Dice[] => {
   return dicesArr;
 };
 
-export const diceHoldHandler = (dice) => {
-  return dice.map((die) => {
+export const diceHoldHandler = (dice) =>
+  dice.map((die) => {
     if (!die.isHeld) {
       return {
         ...die,
@@ -28,11 +28,9 @@ export const diceHoldHandler = (dice) => {
     }
     return die;
   });
-}
 
-export const filterRecords = (records: Record[]) => {
-  return take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
-};
+export const filterRecords = (records: Record[]) =>
+  take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
 
 export const getGameSessionTime = (timestamp: string): string => {
   const months = [

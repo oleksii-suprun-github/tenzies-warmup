@@ -5,13 +5,17 @@ import DifficultySelector from '../Components/DifficultySelector';
 import RollDiceButton from '../Components/RollDiceButton';
 import { Record } from 'types';
 
-interface GameDescription {
+interface GameDescriptionProps {
   startHandler: void;
   difficultyHandler: void;
   records: Record[];
 }
 
-const GameDescription: React.FC = ({ startHandler, difficultyHandler, records }) => (
+const GameDescription: React.FC = ({
+  startHandler,
+  difficultyHandler,
+  records,
+}: GameDescriptionProps) => (
   <>
     <Header>
       <h1>🎲 Tenzies</h1>
