@@ -79,7 +79,6 @@ To preview the production build, run:
 - `eslint-plugin-react-hooks`: 4.0.0
 - `nanoid`: ^5.0.7
 - `prettier`: 3.2.5
-- `prettier-plugin-tailwindcss`: 0.4.1
 - `typescript`: 5.4.5
 - `vite`: 5.2.11
 

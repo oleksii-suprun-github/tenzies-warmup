@@ -10,7 +10,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,tsx,ts}\"",
-    "lint": "eslint \"src/**/*.{js,jsx,tsx,ts}\" --quiet"
+    "lint": "eslint \"src/**/*.{js,jsx,tsx,ts}\" --quiet",
+    "prepare": "husky"
   },
   "dependencies": {
     "lodash": "^4.17.21",
