@@ -1,8 +1,8 @@
 import React, { MouseEventHandler } from 'react';
-import Header from '../Components/Header';
-import RecordsTable from '../Components/RecordsTable';
-import DifficultySelector from '../Components/DifficultySelector';
-import RollDiceButton from '../Components/RollDiceButton';
+import Header from '../components/Header';
+import RecordsTable from '../components/RecordsTable';
+import DifficultySelector from '../components/DifficultySelector';
+import RollDiceButton from '../components/RollDiceButton';
 import { Record } from 'types';
 
 interface GameDescriptionProps {
