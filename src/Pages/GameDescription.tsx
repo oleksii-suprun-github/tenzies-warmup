@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import Header from '../Components/Header';
 import RecordsTable from '../Components/RecordsTable';
 import DifficultySelector from '../Components/DifficultySelector';
@@ -6,16 +6,16 @@ import RollDiceButton from '../Components/RollDiceButton';
 import { Record } from 'types';
 
 interface GameDescriptionProps {
-  startHandler: void;
-  difficultyHandler: void;
+  startHandler: MouseEventHandler<HTMLButtonElement>;
+  difficultyHandler: Function;
   records: Record[];
 }
 
-const GameDescription: React.FC = ({
+const GameDescription: React.FC<GameDescriptionProps> = ({
   startHandler,
   difficultyHandler,
   records,
-}: GameDescriptionProps) => (
+}) => (
   <>
     <Header>
       <h1>🎲 Tenzies</h1>

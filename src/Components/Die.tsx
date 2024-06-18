@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
 interface DieProps {
-  holdDieHandler: void;
+  holdDieHandler: MouseEventHandler<HTMLButtonElement>;
   isHeld: boolean;
   value: number;
 }
 
-const Die: React.FC = ({ holdDieHandler, isHeld, value: pipsAmount }: DieProps) => {
+const Die: React.FC<DieProps> = ({ holdDieHandler, isHeld, value: pipsAmount }) => {
   const hasHeldClass = isHeld ? 'held' : '';
-  let diePips: Element[] = [];
+  let diePips: React.JSX.Element[] = [];
   for (let i = 1; i <= pipsAmount; i++) {
     diePips.push(<div key={i} className={`pip pips-${pipsAmount} pip-index-${i}`}></div>);
   }

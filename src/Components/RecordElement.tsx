@@ -3,7 +3,7 @@ import capitalize from 'lodash/capitalize';
 import { getGameSessionTime } from '../utils';
 import { Record } from 'types';
 
-const RecordElement: React.FC = ({ data, index }: { data: Record; index: number }) => {
+const RecordElement: React.FC<{ data: Record; index: number }> = ({ data, index }) => {
   const gameSessionTime = getGameSessionTime(data.date);
 
   return (

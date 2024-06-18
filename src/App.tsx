@@ -20,14 +20,14 @@ const App: React.FC = () => {
 
   const [allDice, setAllDice] = useState<Dice[]>([]);
 
-  const [isGameWon, setGameWon] = useState<Boolean>(false);
-  const [isGameStarted, setGameStarted] = useState<Boolean>(false);
+  const [isGameWon, setGameWon] = useState<boolean>(false);
+  const [isGameStarted, setGameStarted] = useState<boolean>(false);
 
   const [recordsList, setRecordsList] = useState(
     (recordsFromStorage && JSON.parse(recordsFromStorage)) || [],
   );
-  const [gameTime, setGameTime] = useState<Number>(0);
-  const [gameClicks, setGameClicks] = useState<Number>(0);
+  const [gameTime, setGameTime] = useState<number>(0);
+  const [gameClicks, setGameClicks] = useState<number>(0);
 
   useEffect(() => {
     let gameTimer;
@@ -64,7 +64,7 @@ const App: React.FC = () => {
         setDifficulty(Difficulties[1]);
       }
     }
-  }, [allDice, isGameStarted, isGameWon]);
+  }, [allDice, difficulty.label, gameClicks, gameTime, isGameStarted, isGameWon]);
 
   useEffect(() => {
     if (isGameWon) {
@@ -73,7 +73,7 @@ const App: React.FC = () => {
   }, [recordsList, isGameWon]);
 
   function difficultyHandler(difficultyLabel) {
-    setDifficulty(Difficulties.find((item) => item.label === difficultyLabel));
+    setDifficulty(Difficulties.find((item) => item.label === difficultyLabel) || Difficulties[1]);
   }
 
   function rollDicesHandler() {
@@ -146,5 +146,5 @@ const App: React.FC = () => {
   );
 };
 const container = document.getElementById('root');
-const root = createRoot(container);
+const root = createRoot(container!);
 root.render(<App />);

@@ -10,8 +10,8 @@ interface BoardProps {
   difficulty: Difficulty;
   isGameWon: boolean;
   isGameStarted: boolean;
-  rollDicesHandler: void;
-  holdDieHandler: void;
+  rollDicesHandler: () => void;
+  holdDieHandler: Function;
 }
 
 const Board: React.FC<BoardProps> = ({
