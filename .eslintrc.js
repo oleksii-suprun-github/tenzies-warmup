@@ -5,6 +5,8 @@ const prettierOptions = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.pre
 const recommendedExtends = [
   'eslint:recommended',
   'plugin:react/recommended',
+  'plugin:testing-library/react',
+  'plugin:jest-dom/recommended',
   'plugin:react-hooks/recommended',
   'airbnb-typescript',
   'plugin:package-json/recommended',
