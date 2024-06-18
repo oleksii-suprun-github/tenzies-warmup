@@ -1,8 +1,8 @@
 import React from 'react';
-import { getRollDiceBtnLabel } from '../utils';
-import Header from '../components/Header';
-import Die from '../components/Die';
-import RollDiceButton from '../components/RollDiceButton';
+import { getRollDiceBtnLabel } from 'utils';
+import Header from '../Header';
+import Die from '../Die';
+import RollDiceButton from '../RollDiceButton';
 import { Dice, Difficulty } from 'types';
 
 interface BoardProps {

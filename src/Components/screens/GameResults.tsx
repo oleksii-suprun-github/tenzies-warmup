@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react';
-import RollDiceButton from '../components/RollDiceButton';
-import Header from '../components/Header';
+import RollDiceButton from '../RollDiceButton';
+import Header from '../Header';
 
 interface GameResultsProps {
   timeTotal: number;
