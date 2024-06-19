@@ -55,6 +55,8 @@ To preview the production build, run:
 - `prepare`: Prepares the project by running Husky.
 - `test`: Runs Jest tests with coverage.
 - `test:watch`: Runs Jest tests in watch mode with coverage.
+- `test:update`: Updates Jest snapshots.
+- `test:clear`: Clears Jest cache.
 
 ## Dependencies
 
@@ -63,6 +65,8 @@ To preview the production build, run:
 - `react-confetti`: ^6.1.0
 - `react-dom`: ^18.3.1
 - `react-use`: ^17.5.0
+- `date-fns`: "^3.6.0",
+- `date-fns-tz`: "^3.1.3",
 
 ## Dev Dependencies
 
