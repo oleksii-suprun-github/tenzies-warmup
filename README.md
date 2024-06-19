@@ -57,6 +57,8 @@ To preview the production build, run:
 - `test:watch`: Runs Jest tests in watch mode with coverage.
 - `test:update`: Updates Jest snapshots.
 - `test:clear`: Clears Jest cache.
+- `lint-staged`: Runs linting on staged git files before committing.
+- `update-snapshots`: Updates Jest snapshots for changed `.tsx` files before committing.
 
 ## Dependencies
 
@@ -98,6 +100,7 @@ To preview the production build, run:
 - `jest`: ^29.7.0
 - `jest-environment-jsdom`: ^29.7.0
 - `jsonc-eslint-parser`: 2.0.0
+- `lint-staged`: "^15.2.7",
 - `nanoid`: ^5.0.7
 - `postcss`: ^8.4.38
 - `prettier`: ^3.2.5
