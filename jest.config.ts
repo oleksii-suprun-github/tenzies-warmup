@@ -1,18 +1,38 @@
-import type { Config } from 'jest';
+const esModules = ['nanoid'].join('|');
 
-const config: Config = {
-  verbose: true,
+module.exports = {
+  roots: ['<rootDir>/src'],
+  collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts', '!src/mocks/**'],
+  coveragePathIgnorePatterns: [],
+  setupFilesAfterEnv: ['./config/jest/setupTests.js'],
   testEnvironment: 'jsdom',
-  preset: 'ts-jest',
+  modulePaths: ['<rootDir>/src'],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|js|tsx|jsx)$': '@swc/jest',
+    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
   },
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  transformIgnorePatterns: [
+    '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',
+    '^.+\\.module\\.(css|sass|scss)$',
+    `/node_modules/(?!${esModules})`,
+  ],
   moduleNameMapper: {
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/src/test/fileMock.ts',
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+    '^nanoid(/(.*)|$)': 'nanoid$1',
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
+  moduleFileExtensions: [
+    'tsx',
+    'ts',
+    'web.js',
+    'js',
+    'web.ts',
+    'web.tsx',
+    'json',
+    'web.jsx',
+    'jsx',
+    'node',
+  ],
+  //   watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  resetMocks: true,
 };
-
-export default config;
