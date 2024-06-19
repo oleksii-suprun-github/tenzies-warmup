@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Board should render a component with default props 1`] = `
+<div>
+  <header
+    id="header"
+  >
+    <h1
+      data-testid="board-headline"
+    >
+      Match 10 dice
+    </h1>
+  </header>
+  <section>
+    <div
+      id="dice-container"
+    >
+      <button
+        class="die "
+      >
+        <div
+          class="pip pips-1 pip-index-1"
+        />
+      </button>
+      <button
+        class="die "
+      >
+        <div
+          class="pip pips-4 pip-index-1"
+        />
+        <div
+          class="pip pips-4 pip-index-2"
+        />
+        <div
+          class="pip pips-4 pip-index-3"
+        />
+        <div
+          class="pip pips-4 pip-index-4"
+        />
+      </button>
+      <button
+        class="die "
+      >
+        <div
+          class="pip pips-2 pip-index-1"
+        />
+        <div
+          class="pip pips-2 pip-index-2"
+        />
+      </button>
+      <button
+        class="die "
+      >
+        <div
+          class="pip pips-2 pip-index-1"
+        />
+        <div
+          class="pip pips-2 pip-index-2"
+        />
+      </button>
+      <button
+        class="die "
+      >
+        <div
+          class="pip pips-3 pip-index-1"
+        />
+        <div
+          class="pip pips-3 pip-index-2"
+        />
+        <div
+          class="pip pips-3 pip-index-3"
+        />
+      </button>
+      <button
+        class="die "
+      >
+        <div
+          class="pip pips-3 pip-index-1"
+        />
+        <div
+          class="pip pips-3 pip-index-2"
+        />
+        <div
+          class="pip pips-3 pip-index-3"
+        />
+      </button>
+      <button
+        class="die "
+      >
+        <div
+          class="pip pips-2 pip-index-1"
+        />
+        <div
+          class="pip pips-2 pip-index-2"
+        />
+      </button>
+      <button
+        class="die "
+      >
+        <div
+          class="pip pips-3 pip-index-1"
+        />
+        <div
+          class="pip pips-3 pip-index-2"
+        />
+        <div
+          class="pip pips-3 pip-index-3"
+        />
+      </button>
+      <button
+        class="die "
+      >
+        <div
+          class="pip pips-3 pip-index-1"
+        />
+        <div
+          class="pip pips-3 pip-index-2"
+        />
+        <div
+          class="pip pips-3 pip-index-3"
+        />
+      </button>
+      <button
+        class="die "
+      >
+        <div
+          class="pip pips-6 pip-index-1"
+        />
+        <div
+          class="pip pips-6 pip-index-2"
+        />
+        <div
+          class="pip pips-6 pip-index-3"
+        />
+        <div
+          class="pip pips-6 pip-index-4"
+        />
+        <div
+          class="pip pips-6 pip-index-5"
+        />
+        <div
+          class="pip pips-6 pip-index-6"
+        />
+      </button>
+    </div>
+    <button
+      data-testid="roll-dice-button"
+      id="roll-dice-btn"
+    >
+      Roll
+    </button>
+  </section>
+</div>
+`;

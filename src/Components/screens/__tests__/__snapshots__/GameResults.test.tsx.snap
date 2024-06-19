@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameResults should render a component with default props 1`] = `
+<div>
+  <header
+    id="header"
+  >
+    <h1>
+      Congratulation
+    </h1>
+    <p>
+      You won the game!
+    </p>
+  </header>
+  <div
+    id="results"
+  >
+    <p>
+      Total Time: 
+      <strong>
+        19
+         seconds
+      </strong>
+    </p>
+    <p>
+      Total Clicks: 
+      <strong>
+        9
+         clicks
+      </strong>
+    </p>
+  </div>
+  <button
+    data-testid="roll-dice-button"
+    id="roll-dice-btn"
+  >
+    Start again
+  </button>
+</div>
+`;

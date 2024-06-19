@@ -8,7 +8,7 @@ const RecordsTable: FC<{ data: Record[] }> = ({ data: records }) => {
   ));
 
   return (
-    <section id="records-list">
+    <section data-testid="records-list" id="records-list">
       <h2>Top 5 results:</h2>
       <div id="records-table-responsive-wrapper">
         <table id="records-table">

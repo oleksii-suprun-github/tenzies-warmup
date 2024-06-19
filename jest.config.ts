@@ -3,7 +3,7 @@ const esModules = ['nanoid'].join('|');
 module.exports = {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts', '!src/mocks/**'],
-  coveragePathIgnorePatterns: [],
+  coveragePathIgnorePatterns: ['src/App.tsx'],
   setupFilesAfterEnv: ['./config/jest/setupTests.js'],
   testEnvironment: 'jsdom',
   modulePaths: ['<rootDir>/src'],
@@ -17,6 +17,7 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss)$',
     `/node_modules/(?!${esModules})`,
   ],
+
   moduleNameMapper: {
     '^nanoid(/(.*)|$)': 'nanoid$1',
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',

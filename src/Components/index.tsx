@@ -53,7 +53,7 @@ const App: React.FC = () => {
           filterRecordsASC([
             {
               id: nanoid(),
-              date: new Date().toString(),
+              date: Date.now().toString(),
               difficultyLabel: difficulty.label,
               gameTime: gameTime,
               gameClicks: gameClicks,

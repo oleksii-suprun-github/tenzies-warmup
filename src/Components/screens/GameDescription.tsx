@@ -8,7 +8,7 @@ import { Record } from 'types';
 export interface GameDescriptionProps {
   startHandler: MouseEventHandler<HTMLButtonElement>;
   difficultyHandler: Function;
-  records: Record[];
+  records?: Record[];
 }
 
 const GameDescription: React.FC<GameDescriptionProps> = ({
@@ -24,7 +24,7 @@ const GameDescription: React.FC<GameDescriptionProps> = ({
         rolls.
       </p>
     </Header>
-    {!!records.length && <RecordsTable data={records} />}
+    {!!records?.length && <RecordsTable data={records} />}
     <DifficultySelector difficultyHandler={difficultyHandler} />
     <RollDiceButton onClick={startHandler}>Start the game</RollDiceButton>
   </>

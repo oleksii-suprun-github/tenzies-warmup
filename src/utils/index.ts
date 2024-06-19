@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import { toDate } from 'date-fns';
 import { format, toZonedTime } from 'date-fns-tz';
 import { orderBy, take } from 'lodash';
 import { Dice, Record } from 'types';
@@ -34,7 +35,7 @@ export const filterRecordsASC = (records: Record[]) =>
   take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
 
 export const getGameSessionTime = (timestamp: string): string => {
-  const date = toZonedTime(timestamp, 'UTC');
+  const date = toZonedTime(toDate(+timestamp), 'UTC');
   const formattedDate = format(date, "do MMMM 'at' HH:mm", { timeZone: 'UTC' });
   return formattedDate;
 };

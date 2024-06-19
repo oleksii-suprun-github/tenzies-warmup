@@ -22,23 +22,21 @@ const Board: FC<BoardProps> = ({
   rollDicesHandler,
   holdDieHandler,
 }) => {
-  const dice = allDice.length
-    ? allDice.map((die) => (
-        <Die
-          key={die.id}
-          holdDieHandler={() => holdDieHandler(die.id)}
-          isHeld={die.isHeld}
-          value={die.value}
-        />
-      ))
-    : null;
+  const dice = allDice.map((die) => (
+    <Die
+      key={die.id}
+      holdDieHandler={() => holdDieHandler(die.id)}
+      isHeld={die.isHeld}
+      value={die.value}
+    />
+  ));
 
   let buttonLabel = getRollDiceBtnLabel(isGameStarted, isGameWon);
 
   return (
     <>
       <Header>
-        <h1>{`Match ${difficulty.value} dice`}</h1>
+        <h1 data-testid="board-headline">{`Match ${difficulty.value} dice`}</h1>
       </Header>
       <section>
         {dice && <div id="dice-container">{dice}</div>}

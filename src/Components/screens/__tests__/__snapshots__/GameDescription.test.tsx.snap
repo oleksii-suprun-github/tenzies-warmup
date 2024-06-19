@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameDescription should render a component with records table 1`] = `
+<div>
+  <header
+    id="header"
+  >
+    <h1>
+      🎲 Tenzies
+    </h1>
+    <p>
+      Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
+    </p>
+  </header>
+  <section
+    data-testid="records-list"
+    id="records-list"
+  >
+    <h2>
+      Top 5 results:
+    </h2>
+    <div
+      id="records-table-responsive-wrapper"
+    >
+      <table
+        id="records-table"
+      >
+        <thead>
+          <tr>
+            <th />
+            <th>
+              Date
+            </th>
+            <th>
+              Difficulty
+            </th>
+            <th>
+              Total clicks
+            </th>
+            <th>
+              Total time
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="record-element"
+          >
+            <td>
+              #
+              1
+            </td>
+            <td>
+              19th June at 15:44
+            </td>
+            <td>
+              Easy
+            </td>
+            <td>
+              9
+            </td>
+            <td>
+              19
+              s
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section
+    id="difficulty"
+  >
+    <h2>
+      Please choose the difficulty:
+    </h2>
+    <select
+      id="difficulty-selector"
+      name="difficulty"
+    >
+      <option
+        value="easy"
+      >
+        Easy
+      </option>
+      <option
+        selected=""
+        value="normal"
+      >
+        Normal
+      </option>
+      <option
+        value="hard"
+      >
+        Hard
+      </option>
+    </select>
+  </section>
+  <button
+    data-testid="roll-dice-button"
+    id="roll-dice-btn"
+  >
+    Start the game
+  </button>
+</div>
+`;
+
+exports[`GameDescription should render a component without records table 1`] = `
+<div>
+  <header
+    id="header"
+  >
+    <h1>
+      🎲 Tenzies
+    </h1>
+    <p>
+      Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
+    </p>
+  </header>
+  <section
+    id="difficulty"
+  >
+    <h2>
+      Please choose the difficulty:
+    </h2>
+    <select
+      id="difficulty-selector"
+      name="difficulty"
+    >
+      <option
+        value="easy"
+      >
+        Easy
+      </option>
+      <option
+        selected=""
+        value="normal"
+      >
+        Normal
+      </option>
+      <option
+        value="hard"
+      >
+        Hard
+      </option>
+    </select>
+  </section>
+  <button
+    data-testid="roll-dice-button"
+    id="roll-dice-btn"
+  >
+    Start the game
+  </button>
+</div>
+`;

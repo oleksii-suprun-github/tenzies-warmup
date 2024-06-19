@@ -1,0 +1,17 @@
+{
+  "allDice": [
+    { "id": "ktlYUbyQQqOrKuWcWOD9N", "value": 1, "isHeld": false },
+    { "id": "Hb6ISA8wMOwj3P3jttAq2", "value": 4, "isHeld": false },
+    { "id": "DjOEs3Paio5JUfN3X3omJ", "value": 2, "isHeld": false },
+    { "id": "Ubnw7W-0pUNqoBoVqYqv3", "value": 2, "isHeld": false },
+    { "id": "CUEBQbCSOpRH9IfdqKIQn", "value": 3, "isHeld": false },
+    { "id": "CwtfsRa1yiTES34uYeefh", "value": 3, "isHeld": false },
+    { "id": "FkWDtrE702FJiX2L-gW-q", "value": 2, "isHeld": false },
+    { "id": "PieIWYnZ-XC5ToK-pm_PC", "value": 3, "isHeld": false },
+    { "id": "tE9j7YbskameMisvyrATc", "value": 3, "isHeld": false },
+    { "id": "zIiQKVZE3XkM6LXATzlOt", "value": 6, "isHeld": false }
+  ],
+  "difficulty": { "label": "normal", "value": 10 },
+  "isGameWon": false,
+  "isGameStarted": true
+}
