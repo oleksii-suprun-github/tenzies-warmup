@@ -3,7 +3,7 @@ import Confetti from 'react-confetti';
 import useWindowSize from 'react-use/lib/useWindowSize';
 import { nanoid } from 'nanoid';
 
-import { Difficulties, diceHoldHandler, filterRecords, setNewDiceSet } from 'utils';
+import { Difficulties, diceHoldHandler, filterRecordsASC, setNewDiceSet } from 'utils';
 import { Dice, Difficulty } from 'types';
 
 import GameDescription from './screens/GameDescription';
@@ -50,7 +50,7 @@ const App: React.FC = () => {
 
       if (isAllDiceEqual) {
         setRecordsList((prevRecordsList) =>
-          filterRecords([
+          filterRecordsASC([
             {
               id: nanoid(),
               date: new Date().toString(),

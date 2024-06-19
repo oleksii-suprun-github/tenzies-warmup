@@ -1,11 +1,11 @@
-import React from 'react';
+import { FC } from 'react';
 import { getRollDiceBtnLabel } from 'utils';
 import Header from '../Header';
 import Die from '../Die';
 import RollDiceButton from '../RollDiceButton';
 import { Dice, Difficulty } from 'types';
 
-interface BoardProps {
+export interface BoardProps {
   allDice: Dice[];
   difficulty: Difficulty;
   isGameWon: boolean;
@@ -14,7 +14,7 @@ interface BoardProps {
   holdDieHandler: Function;
 }
 
-const Board: React.FC<BoardProps> = ({
+const Board: FC<BoardProps> = ({
   allDice,
   difficulty,
   isGameWon,

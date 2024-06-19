@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
-const GameTimer: React.FC<{ value: number }> = ({ value }) => (
+const GameTimer: FC<{ value: number }> = ({ value }) => (
   <div id="game-timer">
     <strong>Time: </strong>
     {value}

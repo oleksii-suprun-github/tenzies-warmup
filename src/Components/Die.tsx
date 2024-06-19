@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 
-interface DieProps {
+export interface DieProps {
   holdDieHandler: MouseEventHandler<HTMLButtonElement>;
   isHeld: boolean;
   value: number;

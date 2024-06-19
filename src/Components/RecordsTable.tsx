@@ -1,8 +1,8 @@
-import React from 'react';
+import { FC } from 'react';
 import { Record } from 'types';
 import RecordElement from './RecordElement';
 
-const RecordsTable: React.FC<{ data: Record[] }> = ({ data: records }) => {
+const RecordsTable: FC<{ data: Record[] }> = ({ data: records }) => {
   const recordsElements = records.map((record, index) => (
     <RecordElement key={record.id} data={record} index={index} />
   ));

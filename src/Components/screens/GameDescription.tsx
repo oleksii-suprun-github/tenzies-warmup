@@ -5,7 +5,7 @@ import DifficultySelector from '../DifficultySelector';
 import RollDiceButton from '../RollDiceButton';
 import { Record } from 'types';
 
-interface GameDescriptionProps {
+export interface GameDescriptionProps {
   startHandler: MouseEventHandler<HTMLButtonElement>;
   difficultyHandler: Function;
   records: Record[];

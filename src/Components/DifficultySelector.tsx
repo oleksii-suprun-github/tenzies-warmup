@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
-const DifficultySelector: React.FC<{ difficultyHandler: Function }> = ({ difficultyHandler }) => (
+const DifficultySelector: FC<{ difficultyHandler: Function }> = ({ difficultyHandler }) => (
   <section id="difficulty">
     <h2>Please choose the difficulty:</h2>
     <select

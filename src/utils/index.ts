@@ -29,7 +29,7 @@ export const diceHoldHandler = (dice) =>
     return die;
   });
 
-export const filterRecords = (records: Record[]) =>
+export const filterRecordsASC = (records: Record[]) =>
   take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
 
 export const getGameSessionTime = (timestamp: string): string => {

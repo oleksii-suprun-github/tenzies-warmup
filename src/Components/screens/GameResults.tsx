@@ -2,7 +2,7 @@ import React, { MouseEventHandler } from 'react';
 import RollDiceButton from '../RollDiceButton';
 import Header from '../Header';
 
-interface GameResultsProps {
+export interface GameResultsProps {
   timeTotal: number;
   clicksTotal: number;
   restartHandler: MouseEventHandler<HTMLButtonElement>;
