@@ -10,6 +10,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "ESNext"],
+    "types": ["@testing-library/jest-dom", "@types/node"],
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,

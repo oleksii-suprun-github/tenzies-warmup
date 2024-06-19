@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
-import { Dice, Record } from 'types';
+import { format, toZonedTime } from 'date-fns-tz';
 import { orderBy, take } from 'lodash';
+import { Dice, Record } from 'types';
 
 export const Difficulties = [
   { label: 'easy', value: 5 },
@@ -33,27 +34,9 @@ export const filterRecordsASC = (records: Record[]) =>
   take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
 
 export const getGameSessionTime = (timestamp: string): string => {
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-  const date = new Date(timestamp);
-  const day = date.getDate();
-  const month = months[date.getMonth()];
-  const hours = String(date.getHours()).padStart(2, '0');
-  const minutes = String(date.getMinutes()).padStart(2, '0');
-
-  return `${day}th ${month} at ${hours}:${minutes}`;
+  const date = toZonedTime(timestamp, 'UTC');
+  const formattedDate = format(date, "do MMMM 'at' HH:mm", { timeZone: 'UTC' });
+  return formattedDate;
 };
 
 export const getRollDiceBtnLabel = (isGameStarted: boolean, isGameWon: boolean): string => {
