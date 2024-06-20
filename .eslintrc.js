@@ -165,19 +165,4 @@ module.exports = {
       typescript: {},
     },
   },
-  overrides: [
-    // // Add recommended nextJS rules for all zones
-    // {
-    //   files: ['packages/mfe/**'],
-    //   extends: [...recommendedExtends, 'plugin:@next/next/recommended'],
-    //   rules,
-    // },
-    // // this is needed to use useArgs inside render function of storybook.
-    // {
-    //   files: ['packages/lib/components-lib/**/*.stories.{ts,tsx}'],
-    //   rules: {
-    //     'react-hooks/rules-of-hooks': 'off',
-    //   },
-    // },
-  ],
 };
