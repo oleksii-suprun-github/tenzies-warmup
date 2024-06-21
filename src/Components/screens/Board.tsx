@@ -3,11 +3,10 @@ import { getRollDiceBtnLabel } from 'utils';
 import Header from '../Header';
 import Die from '../Die';
 import RollDiceButton from '../RollDiceButton';
-import { Dice, Difficulty } from 'types';
 
 export interface BoardProps {
   allDice: Dice[];
-  difficulty: Difficulty;
+  difficulty: GameDifficulty;
   isGameWon: boolean;
   isGameStarted: boolean;
   rollDicesHandler: () => void;

@@ -2,7 +2,6 @@ import { nanoid } from 'nanoid';
 import { toDate } from 'date-fns';
 import { format, toZonedTime } from 'date-fns-tz';
 import { orderBy, take } from 'lodash';
-import { Dice, Record } from 'types';
 
 export const Difficulties = [
   { label: 'easy', value: 5 },
@@ -31,7 +30,7 @@ export const diceHoldHandler = (dice) =>
     return die;
   });
 
-export const filterRecordsASC = (records: Record[]) =>
+export const filterRecordsASC = (records: GameRecord[]) =>
   take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
 
 export const getGameSessionTime = (timestamp: string): string => {

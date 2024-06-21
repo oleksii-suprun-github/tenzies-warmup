@@ -1,10 +1,10 @@
-export type Dice = {
+type Dice = {
   id: string;
   value: number;
   isHeld: boolean;
 };
 
-export type Record = {
+type GameRecord = {
   id: string;
   date: string;
   difficultyLabel: string;
@@ -12,7 +12,7 @@ export type Record = {
   gameClicks: number;
 };
 
-export type Difficulty = {
+type GameDifficulty = {
   label: string;
   value: number;
 };

@@ -1,9 +1,8 @@
 import { FC } from 'react';
 import capitalize from 'lodash/capitalize';
 import { getGameSessionTime } from '../utils';
-import { Record } from 'types';
 
-const RecordElement: FC<{ data: Record; index: number }> = ({ data, index }) => {
+const RecordElement: FC<{ data: GameRecord; index: number }> = ({ data, index }) => {
   const gameSessionTime = getGameSessionTime(data.date);
 
   return (

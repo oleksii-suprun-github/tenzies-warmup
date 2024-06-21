@@ -1,4 +1,3 @@
-import { Record } from 'types';
 import {
   Difficulties,
   getRandomDieValue,
@@ -56,7 +55,7 @@ describe('diceHoldHandler', () => {
 
 describe('filterRecordsASC', () => {
   it('should return the top 5 records ordered by gameClicks and gameTime', () => {
-    const recordsList: Record[] = [
+    const recordsList: GameRecord[] = [
       { id: '1', date: '2024-05-29', difficultyLabel: 'easy', gameTime: 9, gameClicks: 5 },
       { id: '2', date: '2024-05-29', difficultyLabel: 'easy', gameTime: 17, gameClicks: 5 },
       { id: '3', date: '2024-05-29', difficultyLabel: 'easy', gameTime: 8, gameClicks: 7 },

@@ -4,7 +4,6 @@ import useWindowSize from 'react-use/lib/useWindowSize';
 import { nanoid } from 'nanoid';
 
 import { Difficulties, diceHoldHandler, filterRecordsASC, setNewDiceSet } from 'utils';
-import { Dice, Difficulty } from 'types';
 
 import GameDescription from './screens/GameDescription';
 import GameResults from './screens/GameResults';
@@ -18,7 +17,7 @@ const App: React.FC = () => {
 
   const { width, height } = useWindowSize();
 
-  const [difficulty, setDifficulty] = useState<Difficulty>(Difficulties[1]);
+  const [difficulty, setDifficulty] = useState<GameDifficulty>(Difficulties[1]);
 
   const [allDice, setAllDice] = useState<Dice[]>([]);
 

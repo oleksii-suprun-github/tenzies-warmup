@@ -3,12 +3,11 @@ import Header from '../Header';
 import RecordsTable from '../RecordsTable';
 import DifficultySelector from '../DifficultySelector';
 import RollDiceButton from '../RollDiceButton';
-import { Record } from 'types';
 
 export interface GameDescriptionProps {
   startHandler: MouseEventHandler<HTMLButtonElement>;
   difficultyHandler: Function;
-  records?: Record[];
+  records?: GameRecord[];
 }
 
 const GameDescription: React.FC<GameDescriptionProps> = ({
