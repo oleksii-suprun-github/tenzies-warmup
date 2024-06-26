@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react';
-import App from 'components';
+import App from 'Components';
 
 jest.mock('utils', () => ({
   ...jest.requireActual('utils'),
