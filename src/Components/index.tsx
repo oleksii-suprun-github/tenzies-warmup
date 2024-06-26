@@ -113,7 +113,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <article>
+      <article className="relative flex w-6/12 max-w-[800px] flex-col flex-wrap justify-center self-center rounded-xl bg-main-board px-[50px] py-[75px] shadow-md xs:w-[95%] xl:m-[25px] xl:h-auto xl:w-[90%] xl:p-[25px]">
         {isGameStarted && !isGameWon && (
           <>
             <GameTimer value={gameTime} />

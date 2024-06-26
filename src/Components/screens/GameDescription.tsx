@@ -17,8 +17,8 @@ const GameDescription: React.FC<GameDescriptionProps> = ({
 }) => (
   <>
     <Header>
-      <h1>🎲 Tenzies</h1>
-      <p>
+      <h1 className="mb-6 text-4xl font-extrabold leading-none">🎲 Tenzies</h1>
+      <p className="text-lg">
         Roll until all dice are the same. Click each die to freeze it at its current value between
         rolls.
       </p>

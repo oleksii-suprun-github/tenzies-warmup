@@ -52,7 +52,7 @@ describe('App', () => {
 
     const die = screen.getAllByRole('button')[0];
     fireEvent.click(die);
-    expect(die).toHaveClass('held');
+    expect(die).toHaveClass('bg-main-die-active');
   });
 
   it('should save records to localStorage on win', () => {

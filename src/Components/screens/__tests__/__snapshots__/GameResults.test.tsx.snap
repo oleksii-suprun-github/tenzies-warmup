@@ -3,19 +3,27 @@
 exports[`GameResults should render a component with default props 1`] = `
 <div>
   <header
+    class="text-center"
     id="header"
   >
-    <h1>
+    <h1
+      class="mb-6 text-4xl font-extrabold leading-none"
+    >
       Congratulation
     </h1>
-    <p>
+    <p
+      class="text-lg"
+    >
       You won the game!
     </p>
   </header>
   <div
+    class="mx-auto my-0 mt-[50px]"
     id="results"
   >
-    <p>
+    <p
+      class="mb-2.5"
+    >
       Total Time: 
       <strong>
         19
@@ -31,8 +39,8 @@ exports[`GameResults should render a component with default props 1`] = `
     </p>
   </div>
   <button
+    class="btn btn-primary mx-auto my-0 mt-[50px] w-fit min-w-32 bg-main-button text-main-die"
     data-testid="roll-dice-button"
-    id="roll-dice-btn"
   >
     Start again
   </button>

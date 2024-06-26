@@ -7,11 +7,11 @@ const RecordElement: FC<{ data: GameRecord; index: number }> = ({ data, index })
 
   return (
     <tr className="record-element">
-      <td>#{index + 1}</td>
-      <td>{gameSessionTime}</td>
-      <td>{capitalize(data.difficultyLabel)}</td>
-      <td>{data.gameClicks}</td>
-      <td>{data.gameTime}s</td>
+      <td className="border-main-board-color border p-1.5">#{index + 1}</td>
+      <td className="border-main-board-color border p-1.5">{gameSessionTime}</td>
+      <td className="border-main-board-color border p-1.5">{capitalize(data.difficultyLabel)}</td>
+      <td className="border-main-board-color border p-1.5">{data.gameClicks}</td>
+      <td className="border-main-board-color border p-1.5">{data.gameTime}s</td>
     </tr>
   );
 };

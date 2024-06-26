@@ -3,149 +3,154 @@
 exports[`Board should render a component with default props 1`] = `
 <div>
   <header
+    class="text-center"
     id="header"
   >
     <h1
+      class="mb-12 mt-12 text-4xl font-extrabold leading-none"
       data-testid="board-headline"
     >
       Match 10 dice
     </h1>
   </header>
-  <section>
+  <section
+    class="justify-center; flex w-full flex-col items-center"
+  >
     <div
+      class="xs:grid-cols-[repeat(2,1fr)] sm-md:grid-cols-[repeat(3,1fr)] mb-[50px] mt-[25px] grid gap-[25px] md:grid-cols-[repeat(5,1fr)]"
       id="dice-container"
     >
       <button
-        class="die "
+        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
       >
         <div
-          class="pip pips-1 pip-index-1"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-1 pip-index-1 "
         />
       </button>
       <button
-        class="die "
+        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
       >
         <div
-          class="pip pips-4 pip-index-1"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-4 pip-index-1 undefined"
         />
         <div
-          class="pip pips-4 pip-index-2"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-4 pip-index-2 bottom-[-61px] left-[-32px]"
         />
         <div
-          class="pip pips-4 pip-index-3"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-4 pip-index-3 undefined"
         />
         <div
-          class="pip pips-4 pip-index-4"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-4 pip-index-4 right-[-31px]"
         />
       </button>
       <button
-        class="die "
+        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
       >
         <div
-          class="pip pips-2 pip-index-1"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-2 pip-index-1 "
         />
         <div
-          class="pip pips-2 pip-index-2"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-2 pip-index-2 "
         />
       </button>
       <button
-        class="die "
+        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
       >
         <div
-          class="pip pips-2 pip-index-1"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-2 pip-index-1 "
         />
         <div
-          class="pip pips-2 pip-index-2"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-2 pip-index-2 "
         />
       </button>
       <button
-        class="die "
+        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
       >
         <div
-          class="pip pips-3 pip-index-1"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-1 "
         />
         <div
-          class="pip pips-3 pip-index-2"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-2 "
         />
         <div
-          class="pip pips-3 pip-index-3"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-3 "
         />
       </button>
       <button
-        class="die "
+        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
       >
         <div
-          class="pip pips-3 pip-index-1"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-1 "
         />
         <div
-          class="pip pips-3 pip-index-2"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-2 "
         />
         <div
-          class="pip pips-3 pip-index-3"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-3 "
         />
       </button>
       <button
-        class="die "
+        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
       >
         <div
-          class="pip pips-2 pip-index-1"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-2 pip-index-1 "
         />
         <div
-          class="pip pips-2 pip-index-2"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-2 pip-index-2 "
         />
       </button>
       <button
-        class="die "
+        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
       >
         <div
-          class="pip pips-3 pip-index-1"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-1 "
         />
         <div
-          class="pip pips-3 pip-index-2"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-2 "
         />
         <div
-          class="pip pips-3 pip-index-3"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-3 "
         />
       </button>
       <button
-        class="die "
+        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
       >
         <div
-          class="pip pips-3 pip-index-1"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-1 "
         />
         <div
-          class="pip pips-3 pip-index-2"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-2 "
         />
         <div
-          class="pip pips-3 pip-index-3"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-3 pip-index-3 "
         />
       </button>
       <button
-        class="die "
+        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
       >
         <div
-          class="pip pips-6 pip-index-1"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-6 pip-index-1 "
         />
         <div
-          class="pip pips-6 pip-index-2"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-6 pip-index-2 "
         />
         <div
-          class="pip pips-6 pip-index-3"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-6 pip-index-3 "
         />
         <div
-          class="pip pips-6 pip-index-4"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-6 pip-index-4 "
         />
         <div
-          class="pip pips-6 pip-index-5"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-6 pip-index-5 "
         />
         <div
-          class="pip pips-6 pip-index-6"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-6 pip-index-6 "
         />
       </button>
     </div>
     <button
+      class="btn btn-primary mx-auto my-0 mt-[50px] w-fit min-w-32 bg-main-button text-main-die"
       data-testid="roll-dice-button"
-      id="roll-dice-btn"
     >
       Roll
     </button>

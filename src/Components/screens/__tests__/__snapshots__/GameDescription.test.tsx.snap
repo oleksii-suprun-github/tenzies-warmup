@@ -3,63 +3,99 @@
 exports[`GameDescription should render a component with records table 1`] = `
 <div>
   <header
+    class="text-center"
     id="header"
   >
-    <h1>
+    <h1
+      class="mb-6 text-4xl font-extrabold leading-none"
+    >
       🎲 Tenzies
     </h1>
-    <p>
+    <p
+      class="text-lg"
+    >
       Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
     </p>
   </header>
   <section
+    class="mt-[35px] flex w-full flex-col items-center justify-center"
     data-testid="records-list"
     id="records-list"
   >
-    <h2>
+    <h2
+      class="mb-4 text-center text-xl font-extrabold"
+    >
       Top 5 results:
     </h2>
     <div
+      class="relative w-full overflow-x-auto"
       id="records-table-responsive-wrapper"
     >
       <table
+        class="table w-full border-collapse"
         id="records-table"
       >
-        <thead>
-          <tr>
-            <th />
-            <th>
+        <thead
+          class="bg-main-button text-main-die"
+        >
+          <tr
+            class="text-center"
+          >
+            <th
+              class="rounded-tl-[35px]"
+            />
+            <th
+              class="border-main-board-color border p-1.5 text-base"
+            >
               Date
             </th>
-            <th>
+            <th
+              class="border-main-board-color border p-1.5 text-base"
+            >
               Difficulty
             </th>
-            <th>
+            <th
+              class="border-main-board-color border p-1.5 text-base"
+            >
               Total clicks
             </th>
-            <th>
+            <th
+              class="rounded-tr-[35px] text-base"
+            >
               Total time
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody
+          class="text-center"
+        >
           <tr
             class="record-element"
           >
-            <td>
+            <td
+              class="p-1.5 border border-main-board-color"
+            >
               #
               1
             </td>
-            <td>
+            <td
+              class="p-1.5 border border-main-board-color"
+            >
               19th June at 15:44
             </td>
-            <td>
+            <td
+              class="p-1.5 border border-main-board-color"
+            >
               Easy
             </td>
-            <td>
+            <td
+              class="p-1.5 border border-main-board-color"
+            >
               9
             </td>
-            <td>
+            <td
+              class="p-1.5 border border-main-board-color"
+            >
               19
               s
             </td>
@@ -69,12 +105,16 @@ exports[`GameDescription should render a component with records table 1`] = `
     </div>
   </section>
   <section
+    class="mt=[35px] justify-center; flex w-full flex-col items-center"
     id="difficulty"
   >
-    <h2>
+    <h2
+      class="mb-4 mt-10 text-center text-2xl font-extrabold"
+    >
       Please choose the difficulty:
     </h2>
     <select
+      class="select"
       id="difficulty-selector"
       name="difficulty"
     >
@@ -97,8 +137,8 @@ exports[`GameDescription should render a component with records table 1`] = `
     </select>
   </section>
   <button
+    class="btn btn-primary mx-auto my-0 mt-[50px] w-fit min-w-32 bg-main-button text-main-die"
     data-testid="roll-dice-button"
-    id="roll-dice-btn"
   >
     Start the game
   </button>
@@ -108,22 +148,31 @@ exports[`GameDescription should render a component with records table 1`] = `
 exports[`GameDescription should render a component without records table 1`] = `
 <div>
   <header
+    class="text-center"
     id="header"
   >
-    <h1>
+    <h1
+      class="mb-6 text-4xl font-extrabold leading-none"
+    >
       🎲 Tenzies
     </h1>
-    <p>
+    <p
+      class="text-lg"
+    >
       Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
     </p>
   </header>
   <section
+    class="mt=[35px] justify-center; flex w-full flex-col items-center"
     id="difficulty"
   >
-    <h2>
+    <h2
+      class="mb-4 mt-10 text-center text-2xl font-extrabold"
+    >
       Please choose the difficulty:
     </h2>
     <select
+      class="select"
       id="difficulty-selector"
       name="difficulty"
     >
@@ -146,8 +195,8 @@ exports[`GameDescription should render a component without records table 1`] = `
     </select>
   </section>
   <button
+    class="btn btn-primary mx-auto my-0 mt-[50px] w-fit min-w-32 bg-main-button text-main-die"
     data-testid="roll-dice-button"
-    id="roll-dice-btn"
   >
     Start the game
   </button>

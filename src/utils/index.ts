@@ -48,3 +48,20 @@ export const getRollDiceBtnLabel = (isGameStarted: boolean, isGameWon: boolean):
     return 'Roll';
   }
 };
+
+export const getPipClasses = (pipsAmount: number, index: number) => {
+  switch (pipsAmount) {
+    case 4:
+      if (index === 2) return 'bottom-[-61px] left-[-32px]';
+      if (index === 4) return 'right-[-31px]';
+      break;
+    case 5:
+      if (index === 2) return 'top-[30px]';
+      if (index === 4) return 'left-[-15px]';
+      if (index === 5) return 'right-[-15px]';
+      break;
+    default:
+      return '';
+  }
+  return;
+};

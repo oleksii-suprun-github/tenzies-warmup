@@ -1,7 +1,8 @@
-const fs = require('fs');
 const path = require('path');
 
-const prettierOptions = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'));
+// Load Prettier configuration
+const prettierOptions = require(path.resolve(__dirname, 'prettier.config.js'));
+
 const recommendedExtends = [
   'eslint:recommended',
   'plugin:react/recommended',

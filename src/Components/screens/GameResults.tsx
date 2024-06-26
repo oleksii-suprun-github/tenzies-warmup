@@ -11,11 +11,11 @@ export interface GameResultsProps {
 const GameResults: React.FC<GameResultsProps> = ({ timeTotal, clicksTotal, restartHandler }) => (
   <>
     <Header>
-      <h1>Congratulation</h1>
-      <p>You won the game!</p>
+      <h1 className="mb-6 text-4xl font-extrabold leading-none">Congratulation</h1>
+      <p className="text-lg">You won the game!</p>
     </Header>
-    <div id="results">
-      <p>
+    <div id="results" className="mx-auto my-0 mt-[50px]">
+      <p className="mb-2.5">
         Total Time: <strong>{timeTotal} seconds</strong>
       </p>
       <p>

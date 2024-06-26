@@ -35,10 +35,20 @@ const Board: FC<BoardProps> = ({
   return (
     <>
       <Header>
-        <h1 data-testid="board-headline">{`Match ${difficulty.value} dice`}</h1>
+        <h1
+          data-testid="board-headline"
+          className="mb-12 mt-12 text-4xl font-extrabold leading-none"
+        >{`Match ${difficulty.value} dice`}</h1>
       </Header>
-      <section>
-        {dice && <div id="dice-container">{dice}</div>}
+      <section className="justify-center; flex w-full flex-col items-center">
+        {dice && (
+          <div
+            id="dice-container"
+            className="mb-[50px] mt-[25px] grid gap-[25px] xs:grid-cols-[repeat(2,1fr)] sm-md:grid-cols-[repeat(3,1fr)] md:grid-cols-[repeat(5,1fr)]"
+          >
+            {dice}
+          </div>
+        )}
         <RollDiceButton onClick={rollDicesHandler}>{buttonLabel}</RollDiceButton>
       </section>
     </>
