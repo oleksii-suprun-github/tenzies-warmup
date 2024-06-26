@@ -7,7 +7,7 @@ exports[`GameDescription should render a component with records table 1`] = `
     id="header"
   >
     <h1
-      class="mb-6 text-4xl font-extrabold leading-none"
+      class="mb-6 mt-5 text-4xl font-extrabold leading-none"
     >
       🎲 Tenzies
     </h1>
@@ -18,7 +18,7 @@ exports[`GameDescription should render a component with records table 1`] = `
     </p>
   </header>
   <section
-    class="mt-[35px] flex w-full flex-col items-center justify-center"
+    class="mt-[50px] flex w-full flex-col items-center justify-center"
     data-testid="records-list"
     id="records-list"
   >
@@ -32,35 +32,37 @@ exports[`GameDescription should render a component with records table 1`] = `
       id="records-table-responsive-wrapper"
     >
       <table
-        class="table w-full border-collapse"
+        class="table table-sm"
         id="records-table"
       >
         <thead
           class="bg-main-button text-main-die"
         >
           <tr
-            class="text-center"
+            class="border-separate text-center"
           >
             <th
-              class="rounded-tl-[35px]"
-            />
+              class="border-main-board-color border border-gray-400 text-base"
+            >
+              #
+            </th>
             <th
-              class="border-main-board-color border p-1.5 text-base"
+              class="border-main-board-color border border-gray-400 text-base"
             >
               Date
             </th>
             <th
-              class="border-main-board-color border p-1.5 text-base"
+              class="border-main-board-color border border-gray-400 text-base"
             >
               Difficulty
             </th>
             <th
-              class="border-main-board-color border p-1.5 text-base"
+              class="border-main-board-color border border-gray-400 text-base"
             >
               Total clicks
             </th>
             <th
-              class="rounded-tr-[35px] text-base"
+              class="border-main-board-color border border-gray-400 text-base"
             >
               Total time
             </th>
@@ -70,31 +72,30 @@ exports[`GameDescription should render a component with records table 1`] = `
           class="text-center"
         >
           <tr
-            class="record-element"
+            class="record-element bg-white"
           >
             <td
-              class="p-1.5 border border-main-board-color"
+              class="border-main-board-color border border-gray-400 p-1.5"
             >
-              #
               1
             </td>
             <td
-              class="p-1.5 border border-main-board-color"
+              class="border-main-board-color border border-gray-400 p-1.5"
             >
               19th June at 15:44
             </td>
             <td
-              class="p-1.5 border border-main-board-color"
+              class="border-main-board-color border border-gray-400 p-1.5"
             >
               Easy
             </td>
             <td
-              class="p-1.5 border border-main-board-color"
+              class="border-main-board-color border border-gray-400 p-1.5"
             >
               9
             </td>
             <td
-              class="p-1.5 border border-main-board-color"
+              class="border-main-board-color border border-gray-400 p-1.5"
             >
               19
               s
@@ -114,7 +115,7 @@ exports[`GameDescription should render a component with records table 1`] = `
       Please choose the difficulty:
     </h2>
     <select
-      class="select"
+      class="select select-bordered"
       id="difficulty-selector"
       name="difficulty"
     >
@@ -137,7 +138,7 @@ exports[`GameDescription should render a component with records table 1`] = `
     </select>
   </section>
   <button
-    class="btn btn-primary mx-auto my-0 mt-[50px] w-fit min-w-32 bg-main-button text-main-die"
+    class="btn btn-primary mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
     data-testid="roll-dice-button"
   >
     Start the game
@@ -152,7 +153,7 @@ exports[`GameDescription should render a component without records table 1`] = `
     id="header"
   >
     <h1
-      class="mb-6 text-4xl font-extrabold leading-none"
+      class="mb-6 mt-5 text-4xl font-extrabold leading-none"
     >
       🎲 Tenzies
     </h1>
@@ -172,7 +173,7 @@ exports[`GameDescription should render a component without records table 1`] = `
       Please choose the difficulty:
     </h2>
     <select
-      class="select"
+      class="select select-bordered"
       id="difficulty-selector"
       name="difficulty"
     >
@@ -195,7 +196,7 @@ exports[`GameDescription should render a component without records table 1`] = `
     </select>
   </section>
   <button
-    class="btn btn-primary mx-auto my-0 mt-[50px] w-fit min-w-32 bg-main-button text-main-die"
+    class="btn btn-primary mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
     data-testid="roll-dice-button"
   >
     Start the game

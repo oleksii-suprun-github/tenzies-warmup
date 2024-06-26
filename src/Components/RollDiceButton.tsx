@@ -6,7 +6,7 @@ const RollDiceButton: React.FC<{
 }> = ({ children, onClick }) => (
   <button
     data-testid="roll-dice-button"
-    className="btn btn-primary mx-auto my-0 mt-[50px] w-fit min-w-32 bg-main-button text-main-die"
+    className="btn btn-primary mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
     onClick={onClick}
   >
     {children}

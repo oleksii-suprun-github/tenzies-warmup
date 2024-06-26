@@ -17,7 +17,7 @@ exports[`Board should render a component with default props 1`] = `
     class="justify-center; flex w-full flex-col items-center"
   >
     <div
-      class="xs:grid-cols-[repeat(2,1fr)] sm-md:grid-cols-[repeat(3,1fr)] mb-[50px] mt-[25px] grid gap-[25px] md:grid-cols-[repeat(5,1fr)]"
+      class="mb-[50px] mt-[25px] grid gap-[25px] xs:grid-cols-[repeat(2,1fr)] sm-md:grid-cols-[repeat(3,1fr)] md:grid-cols-[repeat(5,1fr)]"
       id="dice-container"
     >
       <button
@@ -149,7 +149,7 @@ exports[`Board should render a component with default props 1`] = `
       </button>
     </div>
     <button
-      class="btn btn-primary mx-auto my-0 mt-[50px] w-fit min-w-32 bg-main-button text-main-die"
+      class="btn btn-primary mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
       data-testid="roll-dice-button"
     >
       Roll
