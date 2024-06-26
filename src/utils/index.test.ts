@@ -6,6 +6,7 @@ import {
   filterRecordsASC,
   getGameSessionTime,
   getRollDiceBtnLabel,
+  getPipClasses,
 } from './';
 
 describe('Difficulties', () => {
@@ -95,5 +96,37 @@ describe('getRollDiceBtnLabel', () => {
   it('should return "Roll" if the game is started and not won', () => {
     const label = getRollDiceBtnLabel(true, false);
     expect(label).toBe('Roll');
+  });
+});
+
+describe('getPipClasses', () => {
+  it('should return correct classes for pipsAmount = 4 and index = 2', () => {
+    const result = getPipClasses(4, 2);
+    expect(result).toBe('bottom-[-61px] left-[-32px]');
+  });
+
+  it('should return correct classes for pipsAmount = 4 and index = 4', () => {
+    const result = getPipClasses(4, 4);
+    expect(result).toBe('right-[-31px]');
+  });
+
+  it('should return correct classes for pipsAmount = 5 and index = 2', () => {
+    const result = getPipClasses(5, 2);
+    expect(result).toBe('top-[30px]');
+  });
+
+  it('should return correct classes for pipsAmount = 5 and index = 4', () => {
+    const result = getPipClasses(5, 4);
+    expect(result).toBe('left-[-15px]');
+  });
+
+  it('should return correct classes for pipsAmount = 5 and index = 5', () => {
+    const result = getPipClasses(5, 5);
+    expect(result).toBe('right-[-15px]');
+  });
+
+  it('should return an empty string for pipsAmount other than 4 or 5', () => {
+    const result = getPipClasses(3, 2);
+    expect(result).toBe('');
   });
 });
