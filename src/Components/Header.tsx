@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
-const Header: React.FC<{ children: ReactNode }> = ({ children }) => (
+const Header = ({ children }: PropsWithChildren) => (
   <header id="header" className="text-center">
     {children}
   </header>

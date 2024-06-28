@@ -1,15 +1,16 @@
-import React, { MouseEventHandler } from 'react';
+import { MouseEventHandler, Key, JSX } from 'react';
 import { getPipClasses } from 'utils';
 
 export interface DieProps {
+  key: Key;
   holdDieHandler: MouseEventHandler<HTMLButtonElement>;
   isHeld: boolean;
   value: number;
 }
 
-const Die: React.FC<DieProps> = ({ holdDieHandler, isHeld, value: pipsAmount }) => {
+const Die = ({ holdDieHandler, isHeld, value: pipsAmount }: DieProps) => {
   const hasHeldClass = isHeld ? 'bg-main-die-active' : '';
-  let diePips: React.JSX.Element[] = [];
+  let diePips: JSX.Element[] = [];
   for (let i = 1; i <= pipsAmount; i++) {
     diePips.push(
       <div

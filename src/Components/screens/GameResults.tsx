@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import { MouseEventHandler } from 'react';
 import RollDiceButton from '../RollDiceButton';
 import Header from '../Header';
 
@@ -8,7 +8,7 @@ export interface GameResultsProps {
   restartHandler: MouseEventHandler<HTMLButtonElement>;
 }
 
-const GameResults: React.FC<GameResultsProps> = ({ timeTotal, clicksTotal, restartHandler }) => (
+const GameResults = ({ timeTotal, clicksTotal, restartHandler }: GameResultsProps) => (
   <>
     <Header>
       <h1 className="mb-6 text-4xl font-extrabold leading-none">Congratulation</h1>

@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import { MouseEventHandler } from 'react';
 import Header from '../Header';
 import RecordsTable from '../RecordsTable';
 import DifficultySelector from '../DifficultySelector';
@@ -10,11 +10,7 @@ export interface GameDescriptionProps {
   records?: GameRecord[];
 }
 
-const GameDescription: React.FC<GameDescriptionProps> = ({
-  startHandler,
-  difficultyHandler,
-  records,
-}) => (
+const GameDescription = ({ startHandler, difficultyHandler, records }: GameDescriptionProps) => (
   <>
     <Header>
       <h1 className="mb-6 mt-5 text-4xl font-extrabold leading-none">🎲 Tenzies</h1>

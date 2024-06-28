@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Confetti from 'react-confetti';
 import useWindowSize from 'react-use/lib/useWindowSize';
 import { nanoid } from 'nanoid';
@@ -11,7 +11,7 @@ import Board from './screens/Board';
 
 import GameTimer from './GameTimer';
 
-const App: React.FC = () => {
+const App = () => {
   const STORAGE_VARIABLE = 'tenzies-wins-records';
   const recordsFromStorage = localStorage.getItem(STORAGE_VARIABLE);
 
