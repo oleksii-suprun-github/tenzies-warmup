@@ -21,7 +21,7 @@
     "test:watch": "jest --watchAll --coverage",
     "test:update": "jest --updateSnapshot",
     "test:clear": "jest --clearCache",
-    "update-snapshots": "node ./config/check-and-update-snapshots.cjs"
+    "update-snapshots": "node ./config/check-and-update-snapshots.js"
   },
   "dependencies": {
     "date-fns": "^3.6.0",

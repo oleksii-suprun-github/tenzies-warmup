@@ -1,4 +1,4 @@
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
 const changedFiles = execSync('git diff --cached --name-only --diff-filter=ACMRTUXB')
   .toString()
@@ -6,7 +6,7 @@ const changedFiles = execSync('git diff --cached --name-only --diff-filter=ACMRT
   .filter((file) => file.endsWith('.tsx'));
 
 if (changedFiles.length > 0) {
-  execSync(`jest ${changedFiles.join(' ')}  --updateSnapshot `, {
+  execSync(`jest ${changedFiles.join(' ')} --updateSnapshot`, {
     stdio: 'inherit',
   });
 
