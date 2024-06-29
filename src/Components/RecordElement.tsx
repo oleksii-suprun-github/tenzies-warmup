@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import capitalize from 'lodash/capitalize';
+import capitalize from 'lodash-es/capitalize';
 import { getGameSessionTime } from '../utils';
 
 const RecordElement: FC<{ data: GameRecord; index: number }> = ({ data, index }) => {

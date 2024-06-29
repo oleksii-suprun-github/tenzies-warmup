@@ -11,6 +11,10 @@ export default defineConfig({
   },
 
   e2e: {
+    env: {
+      NODE_ENV: 'testing',
+      DEV_URL: 'http://localhost:5173/',
+    },
     setupNodeEvents(on, config) {
       codeCoverageTask(on, config);
       return config;

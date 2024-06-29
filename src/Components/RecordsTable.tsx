@@ -14,6 +14,7 @@ const RecordsTable: FC<{ data: GameRecord[] }> = ({ data: records }) => {
     >
       <h2 className="mb-4 text-center text-xl font-extrabold">Top 5 results:</h2>
       <div
+        data-testid="records-table"
         id="records-table-responsive-wrapper"
         className="relative w-full overflow-x-auto"
         style={{ WebkitOverflowScrolling: 'touch' }}

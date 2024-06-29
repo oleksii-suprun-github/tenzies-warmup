@@ -11,7 +11,7 @@ export interface GameResultsProps {
 const GameResults = ({ timeTotal, clicksTotal, restartHandler }: GameResultsProps) => (
   <>
     <Header>
-      <h1 className="mb-6 text-4xl font-extrabold leading-none">Congratulation</h1>
+      <h1 className="mb-6 text-4xl font-extrabold leading-none">Congratulations</h1>
       <p className="text-lg">You won the game!</p>
     </Header>
     <div id="results" className="mx-auto my-0 mt-[50px]">

@@ -1,6 +1,7 @@
 const esModules = ['nanoid'].join('|');
 
 module.exports = {
+  preset: 'ts-jest/presets/default-esm',
   roots: ['<rootDir>/src'],
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts', '!src/mocks/**'],
   coveragePathIgnorePatterns: ['src/App.tsx'],
@@ -21,6 +22,10 @@ module.exports = {
 
   moduleNameMapper: {
     '^nanoid(/(.*)|$)': 'nanoid$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^components/(.*)$': '<rootDir>/src/Components/$1',
+    '^utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^types/(.*)$': '<rootDir>/src/types/$1',
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
   moduleFileExtensions: [
@@ -36,4 +41,7 @@ module.exports = {
     'node',
   ],
   resetMocks: true,
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  fakeTimers: { enableGlobally: true },
+  injectGlobals: true,
 };

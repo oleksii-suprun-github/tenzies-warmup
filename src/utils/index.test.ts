@@ -5,7 +5,6 @@ import {
   diceHoldHandler,
   filterRecordsASC,
   getGameSessionTime,
-  getRollDiceBtnLabel,
   getPipClasses,
 } from './';
 
@@ -79,23 +78,6 @@ describe('getGameSessionTime', () => {
     const timestamp = '1717013873000';
     const formattedTime = getGameSessionTime(timestamp);
     expect(formattedTime).toBe('29th May at 20:17');
-  });
-});
-
-describe('getRollDiceBtnLabel', () => {
-  it('should return "Start the game" if the game has not started', () => {
-    const label = getRollDiceBtnLabel(false, false);
-    expect(label).toBe('Start the game');
-  });
-
-  it('should return "Play again" if the game is won', () => {
-    const label = getRollDiceBtnLabel(true, true);
-    expect(label).toBe('Play again');
-  });
-
-  it('should return "Roll" if the game is started and not won', () => {
-    const label = getRollDiceBtnLabel(true, false);
-    expect(label).toBe('Roll');
   });
 });
 

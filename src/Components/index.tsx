@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react';
 import Confetti from 'react-confetti';
-import useWindowSize from 'react-use/lib/useWindowSize';
 import { nanoid } from 'nanoid';
+import { useWindowSize } from 'usehooks-ts';
 
-import { Difficulties, diceHoldHandler, filterRecordsASC, setNewDiceSet } from 'utils';
+import {
+  Difficulties,
+  checkAndSetGameWonForCypress,
+  diceHoldHandler,
+  filterRecordsASC,
+  setNewDiceSet,
+} from 'utils';
 
 import GameDescription from './screens/GameDescription';
 import GameResults from './screens/GameResults';
@@ -45,6 +51,15 @@ const App = () => {
       const firstDieValue = allDice[0]?.value;
       const isAllDiceEqual = allDice.every(
         (die) => die.value === firstDieValue && die.isHeld === true,
+      );
+
+      checkAndSetGameWonForCypress(
+        allDice,
+        setGameWon,
+        setRecordsList,
+        difficulty,
+        gameTime,
+        gameClicks,
       );
 
       if (isAllDiceEqual) {

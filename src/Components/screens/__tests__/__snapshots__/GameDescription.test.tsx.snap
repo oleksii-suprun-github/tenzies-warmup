@@ -29,6 +29,7 @@ exports[`GameDescription should render a component with records table 1`] = `
     </h2>
     <div
       class="relative w-full overflow-x-auto"
+      data-testid="records-table"
       id="records-table-responsive-wrapper"
     >
       <table

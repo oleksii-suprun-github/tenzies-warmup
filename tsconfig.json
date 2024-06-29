@@ -10,7 +10,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "ESNext"],
-    "types": ["@testing-library/jest-dom", "@types/node", "@types/jest", "cypress"],
+    "types": [
+      "@testing-library/jest-dom",
+      "@types/node",
+      "vite/client",
+      "@types/jest",
+      "cypress",
+      "@types/lodash"
+    ],
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,

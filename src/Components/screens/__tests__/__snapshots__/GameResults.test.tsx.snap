@@ -9,7 +9,7 @@ exports[`GameResults should render a component with default props 1`] = `
     <h1
       class="mb-6 text-4xl font-extrabold leading-none"
     >
-      Congratulation
+      Congratulations
     </h1>
     <p
       class="text-lg"

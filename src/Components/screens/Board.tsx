@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { getRollDiceBtnLabel } from 'utils';
 import Header from '../Header';
 import Die from '../Die';
 import RollDiceButton from '../RollDiceButton';
@@ -13,14 +12,7 @@ export interface BoardProps {
   holdDieHandler: Function;
 }
 
-const Board: FC<BoardProps> = ({
-  allDice,
-  difficulty,
-  isGameWon,
-  isGameStarted,
-  rollDicesHandler,
-  holdDieHandler,
-}) => {
+const Board: FC<BoardProps> = ({ allDice, difficulty, rollDicesHandler, holdDieHandler }) => {
   const dice = allDice.map((die) => (
     <Die
       key={die.id}
@@ -29,8 +21,6 @@ const Board: FC<BoardProps> = ({
       value={die.value}
     />
   ));
-
-  let buttonLabel = getRollDiceBtnLabel(isGameStarted, isGameWon);
 
   return (
     <>
@@ -49,7 +39,7 @@ const Board: FC<BoardProps> = ({
             {dice}
           </div>
         )}
-        <RollDiceButton onClick={rollDicesHandler}>{buttonLabel}</RollDiceButton>
+        <RollDiceButton onClick={rollDicesHandler}>Roll</RollDiceButton>
       </section>
     </>
   );
