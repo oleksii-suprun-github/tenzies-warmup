@@ -1,19 +1,19 @@
-import { defineConfig } from "cypress";
-import viteConfig from "./vite.config";
+import { defineConfig } from 'cypress';
+import codeCoverageTask from '@cypress/code-coverage/task';
 
 export default defineConfig({
   projectId: 'dq6bjd',
   component: {
     devServer: {
-      framework: "react",
-      bundler: "vite",
-      viteConfig,
+      framework: 'react',
+      bundler: 'vite',
     },
   },
 
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      codeCoverageTask(on, config);
+      return config;
     },
   },
 });

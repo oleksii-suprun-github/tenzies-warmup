@@ -5,12 +5,13 @@ module.exports = {
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts', '!src/mocks/**'],
   coveragePathIgnorePatterns: ['src/App.tsx'],
   setupFilesAfterEnv: ['./config/jest/setupTests.js'],
+  coverageDirectory: 'coverage/jest',
   testEnvironment: 'jsdom',
   modulePaths: ['<rootDir>/src'],
   transform: {
     '^.+\\.(ts|js|tsx|jsx)$': '@swc/jest',
-    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
-    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
+    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.cjs',
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.cjs',
   },
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',
@@ -34,6 +35,5 @@ module.exports = {
     'jsx',
     'node',
   ],
-  //   watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
   resetMocks: true,
 };

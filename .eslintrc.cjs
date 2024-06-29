@@ -1,7 +1,7 @@
 const path = require('path');
 
 // Load Prettier configuration
-const prettierOptions = require(path.resolve(__dirname, 'prettier.config.js'));
+const prettierOptions = require(path.resolve(__dirname, 'prettier.config.cjs'));
 
 const recommendedExtends = [
   'eslint:recommended',

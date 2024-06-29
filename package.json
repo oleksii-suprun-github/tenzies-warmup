@@ -2,6 +2,7 @@
   "name": "tenzies-warmup",
   "version": "1.0.0",
   "description": "A simple warm-up react project",
+  "type": "module",
   "main": "index.js",
   "author": "Oleksii Suprun oleksii.suprun.email@gmail.com",
   "license": "MIT",
@@ -14,11 +15,13 @@
     "lint": "eslint \"src/**/*.{js,jsx,tsx,ts}\" --quiet",
     "prepare": "husky",
     "lint-staged": "lint-staged",
+    "cy:open": "cypress open",
+    "coverage": "nyc report --reporter=text-summary --reporter=html",
     "test": "jest --coverage --verbose",
     "test:watch": "jest --watchAll --coverage",
     "test:update": "jest --updateSnapshot",
     "test:clear": "jest --clearCache",
-    "update-snapshots": "node ./config/check-and-update-snapshots.js"
+    "update-snapshots": "node ./config/check-and-update-snapshots.cjs"
   },
   "dependencies": {
     "date-fns": "^3.6.0",
@@ -32,6 +35,8 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@cypress/code-coverage": "^3.12.39",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@swc/core": "^1.6.3",
     "@swc/jest": "^0.2.36",
     "@testing-library/dom": "^10.1.0",
@@ -69,6 +74,7 @@
     "jsonc-eslint-parser": "2.0.0",
     "lint-staged": "^15.2.7",
     "nanoid": "5.0.7",
+    "nyc": "^17.0.0",
     "postcss": "^8.4.38",
     "prettier": "3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.5",
@@ -76,7 +82,8 @@
     "ts-jest": "^29.1.5",
     "ts-node": "^10.9.2",
     "typescript": "5.4.5",
-    "vite": "5.2.11"
+    "vite": "5.2.11",
+    "vite-plugin-istanbul": "^6.0.2"
   },
   "lint-staged": {
     "*.{test.ts,test.tsx}": [

@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import istanbul from 'vite-plugin-istanbul';
 import path from 'path';
 
 export default defineConfig({
@@ -11,7 +12,16 @@ export default defineConfig({
       types: path.resolve(__dirname, './src/types'),
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    istanbul({
+      include: 'src/*',
+      exclude: ['node_modules'],
+      extension: ['.js', '.ts', '.jsx', '.tsx'],
+      cypress: true,
+      requireEnv: false,
+    }),
+  ],
   css: {
     postcss: './postcss.config.js',
   },
@@ -19,5 +29,6 @@ export default defineConfig({
   publicDir: '../public',
   build: {
     outDir: '../dist',
+    sourcemap: true,
   },
 });
