@@ -19,14 +19,13 @@ Tenzies Warm-up is a simple React project designed to refresh React skills by re
 - <b>React</b>: A JavaScript library for building user interfaces.
 - <b>TypeScript</b>: A typed superset of JavaScript that compiles to plain JavaScript.
 - <b>Vite</b>: A build tool that provides a faster and leaner development experience for modern web projects.
-- <b>Jest</b>: A delightful JavaScript testing framework with a focus on simplicity.
+- <b>Vitest</b>: A blazing-fast unit test framework powered by Vite.
 - <b>ESLint</b>: A static code analysis tool for identifying problematic patterns found in JavaScript code.
 - <b>Prettier</b>: An opinionated code formatter.
 - <b>Husky</b>: Git hooks made easy.
 - <b>Lint-staged</b>: Run linters on git staged files.
 - <b>Date-fns</b>: Modern JavaScript date utility library.
 - <b>Lodash</b>: A modern JavaScript utility library delivering modularity, performance & extras.
-- <b>React-use</b>: A collection of essential React Hooks.
 - <b>TailwindCSS</b>: A utility-first CSS framework for rapidly building custom user interfaces.
 - <b>Cypress</b>: Fast, easy and reliable testing for anything that runs in a browser.
 - <b>React Confetti</b>: Confetti for React applications.
@@ -70,22 +69,23 @@ To preview the production build, run:
 - `type-check`: Checks TypeScript types.
 - `lint`: Lints the code using ESLint.
 - `prepare`: Prepares the project by running Husky.
-- `test`: Runs Jest tests with coverage.
-- `test:watch`: Runs Jest tests in watch mode with coverage.
-- `test:update`: Updates Jest snapshots.
-- `test:clear`: Clears Jest cache.
 - `lint-staged`: Runs linting on staged git files before committing.
-- `update-snapshots`: Updates Jest snapshots for changed `.tsx` files before committing.
+- `cy:open`: Opens Cypress test runner.
+- `cy:coverage`: Generates Cypress coverage report.
+- `test`: Runs Vitest tests with coverage.
+- `test:watch`: Runs Vitest tests in watch mode with coverage.
+- `test:update`: Updates Vitest snapshots.
+- `update-snapshots`: Runs Vitest tests with coverage on changed files and updates snapshots.
 
 ## Dependencies
 
-- `lodash`: ^4.17.21
+- `date-fns`: ^3.6.0
+- `date-fns-tz`: ^3.1.3
+- `lodash-es`: ^4.17.21
 - `react`: ^18.3.1
 - `react-confetti`: ^6.1.0
 - `react-dom`: ^18.3.1
-- `react-use`: ^17.5.0
-- `date-fns`: "^3.6.0",
-- `date-fns-tz`: "^3.1.3",
+- `usehooks-ts`: ^3.1.0
 
 ## Dev Dependencies
 
@@ -96,15 +96,16 @@ To preview the production build, run:
 - `@istanbuljs/nyc-config-typescript`: ^1.0.2
 - `@swc/core`: ^1.6.3
 - `@swc/jest`: ^0.2.36
-- `@testing-library/dom`: ^10.1.0
+- `@testing-library/dom`: ^10.2.0
 - `@testing-library/jest-dom`: ^6.4.6
 - `@testing-library/react`: ^16.0.0
-- `@testing-library/user-event`: ^14.5.2
-- `@types/jest`: ^29.5.12
+- `@types/cypress`: ^1.1.3
+- `@types/lodash-es`: ^4.17.12
 - `@types/node`: ^20.14.5
 - `@typescript-eslint/eslint-plugin`: ^7.14.1
 - `@typescript-eslint/parser`: ^7.14.1
 - `@vitejs/plugin-react`: 4.2.1
+- `@vitest/ui`: ^1.6.0
 - `autoprefixer`: ^10.4.19
 - `camelcase`: 6
 - `cypress`: ^13.12.0
@@ -125,9 +126,7 @@ To preview the production build, run:
 - `eslint-plugin-react-hooks`: ^4.6.2
 - `eslint-plugin-testing-library`: ^6.2.2
 - `husky`: ^9.0.11
-- `identity-obj-proxy`: ^3.0.0
-- `jest`: ^29.7.0
-- `jest-environment-jsdom`: ^29.7.0
+- `jsdom`: ^24.1.0
 - `jsonc-eslint-parser`: 2.0.0
 - `lint-staged`: ^15.2.7
 - `nanoid`: 5.0.7
@@ -136,11 +135,11 @@ To preview the production build, run:
 - `prettier`: 3.2.5
 - `prettier-plugin-tailwindcss`: ^0.6.5
 - `tailwindcss`: ^3.4.4
-- `ts-jest`: ^29.1.5
 - `ts-node`: ^10.9.2
 - `typescript`: 5.4.5
 - `vite`: 5.2.11
 - `vite-plugin-istanbul`: ^6.0.2
+- `vitest`: ^1.6.0
 
 ## Author
 
