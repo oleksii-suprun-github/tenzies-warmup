@@ -1,7 +1,24 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
-import App from 'Components';
+import { beforeEach, describe, it, expect, vi } from 'vitest';
+import App from '../index';
 
-jest.mock('react-confetti', () => <div data-testid="confetti"></div>);
+vi.mock('utils', async (importOriginal) => {
+  const actual = (await importOriginal()) as { [key: string]: any };
+  return {
+    ...actual,
+    setNewDiceSet: (difficulty: number = 3): Dice[] => {
+      let dicesArr: Dice[] = [];
+      for (let i = 0; i < difficulty; i++) {
+        dicesArr.push({ id: `test-id-${i}`, value: 6, isHeld: false });
+      }
+      return dicesArr;
+    },
+  };
+});
+
+vi.mock('react-confetti', () => ({
+  default: () => <div data-testid="confetti"></div>,
+}));
 
 describe('App', () => {
   beforeEach(() => {
@@ -37,7 +54,7 @@ describe('App', () => {
     expect(die).toHaveClass('bg-main-die-active');
   });
 
-  it.skip('should save records to localStorage on win', () => {
+  it('should save records to localStorage on win', () => {
     render(<App />);
 
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'easy' } });
@@ -50,7 +67,8 @@ describe('App', () => {
     });
 
     act(() => {
-      jest.advanceTimersByTime(2000);
+      vi.useFakeTimers();
+      vi.advanceTimersByTime(2000);
     });
 
     expect(screen.getByTestId('confetti')).toBeInTheDocument();

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`GameResults should render a component with default props 1`] = `
+exports[`GameResults > should render a component with default props 1`] = `
 <div>
   <header
     class="text-center"

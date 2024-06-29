@@ -66,22 +66,20 @@ export const checkAndSetGameWonForCypress = (
   gameTime: number,
   gameClicks: number,
 ): void => {
-  if (import.meta.env?.DEV && window.Cypress) {
-    if (Cypress.env('NODE_ENV') === 'testing' && allDice.every((die) => die.isHeld)) {
-      setGameWon(true);
-      setRecordsList((prevRecordsList) =>
-        filterRecordsASC([
-          {
-            id: nanoid(),
-            date: Date.now().toString(),
-            difficultyLabel: difficulty.label,
-            gameTime: gameTime,
-            gameClicks: gameClicks,
-          },
-          ...prevRecordsList,
-        ]),
-      );
-    }
+  if (import.meta.env.DEV && allDice.every((die) => die.isHeld)) {
+    setGameWon(true);
+    setRecordsList((prevRecordsList) =>
+      filterRecordsASC([
+        {
+          id: nanoid(),
+          date: Date.now().toString(),
+          difficultyLabel: difficulty.label,
+          gameTime: gameTime,
+          gameClicks: gameClicks,
+        },
+        ...prevRecordsList,
+      ]),
+    );
   }
   return;
 };

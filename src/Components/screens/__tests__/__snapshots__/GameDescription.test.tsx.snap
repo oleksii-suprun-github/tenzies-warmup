@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`GameDescription should render a component with records table 1`] = `
+exports[`GameDescription > should render a component with records table 1`] = `
 <div>
   <header
     class="text-center"
@@ -147,7 +147,7 @@ exports[`GameDescription should render a component with records table 1`] = `
 </div>
 `;
 
-exports[`GameDescription should render a component without records table 1`] = `
+exports[`GameDescription > should render a component without records table 1`] = `
 <div>
   <header
     class="text-center"

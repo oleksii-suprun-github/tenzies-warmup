@@ -28,9 +28,20 @@ export default defineConfig(() => {
     },
     root: 'src',
     publicDir: '../public',
+    include: ['tests-vitest/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     build: {
       outDir: '../dist',
       sourcemap: true,
+    },
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: '../config/setupTests.ts',
+      coverage: {
+        provider: 'istanbul',
+        reporter: ['text', 'json', 'html'],
+        exclude: ['src/App.tsx'],
+      },
     },
   };
 });

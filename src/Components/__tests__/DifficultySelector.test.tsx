@@ -3,7 +3,7 @@ import DifficultySelector from '../DifficultySelector';
 
 describe('DifficultySelector', () => {
   it('should render correctly', () => {
-    const difficultyHandler = jest.fn();
+    const difficultyHandler = vi.fn();
     render(<DifficultySelector difficultyHandler={difficultyHandler} />);
 
     expect(screen.getByText('Please choose the difficulty:')).toBeInTheDocument();
@@ -14,7 +14,7 @@ describe('DifficultySelector', () => {
   });
 
   it('should call difficultyHandler with the correct value on change', () => {
-    const difficultyHandler = jest.fn();
+    const difficultyHandler = vi.fn();
     render(<DifficultySelector difficultyHandler={difficultyHandler} />);
 
     const selectElement = screen.getByRole('combobox');
