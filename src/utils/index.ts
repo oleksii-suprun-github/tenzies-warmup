@@ -3,6 +3,12 @@ import { toDate } from 'date-fns';
 import { format, toZonedTime } from 'date-fns-tz';
 import { orderBy, take } from 'lodash-es';
 
+declare global {
+  interface Window {
+    Cypress?: any;
+  }
+}
+
 export const Difficulties = [
   { label: 'easy', value: 5 },
   { label: 'normal', value: 10 },
@@ -66,7 +72,7 @@ export const checkAndSetGameWonForCypress = (
   gameTime: number,
   gameClicks: number,
 ): void => {
-  if (import.meta.env.DEV && allDice.every((die) => die.isHeld)) {
+  if (window?.Cypress && allDice.every((die) => die.isHeld)) {
     setGameWon(true);
     setRecordsList((prevRecordsList) =>
       filterRecordsASC([
