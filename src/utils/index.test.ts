@@ -77,7 +77,7 @@ describe('getGameSessionTime', () => {
   it('should return the formatted date string', () => {
     const timestamp = '1717013873000';
     const formattedTime = getGameSessionTime(timestamp);
-    expect(formattedTime).toBe('29th May at 20:17');
+    expect(formattedTime).toBe('29 May 2024 at 22:17');
   });
 });
 
