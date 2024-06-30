@@ -24,8 +24,7 @@ Tenzies Warm-up is a simple React project designed to refresh React skills by re
 - <b>Prettier</b>: An opinionated code formatter.
 - <b>Husky</b>: Git hooks made easy.
 - <b>Lint-staged</b>: Run linters on git staged files.
-- <b>Date-fns</b>: Modern JavaScript date utility library.
-- <b>Lodash</b>: A modern JavaScript utility library delivering modularity, performance & extras.
+- <b>Lodash-ES</b>: A modern JavaScript utility library delivering modularity, performance & extras.
 - <b>TailwindCSS</b>: A utility-first CSS framework for rapidly building custom user interfaces.
 - <b>Cypress</b>: Fast, easy and reliable testing for anything that runs in a browser.
 - <b>React Confetti</b>: Confetti for React applications.
@@ -79,8 +78,6 @@ To preview the production build, run:
 
 ## Dependencies
 
-- `date-fns`: ^3.6.0
-- `date-fns-tz`: ^3.1.3
 - `lodash-es`: ^4.17.21
 - `react`: ^18.3.1
 - `react-confetti`: ^6.1.0

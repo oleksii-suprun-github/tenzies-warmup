@@ -1,6 +1,4 @@
 import { nanoid } from 'nanoid';
-import { toDate } from 'date-fns';
-import { format, toZonedTime } from 'date-fns-tz';
 import { orderBy, take } from 'lodash-es';
 
 declare global {
@@ -42,9 +40,14 @@ export const filterRecordsASC = (records: GameRecord[]) =>
   take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
 
 export const getGameSessionTime = (timestamp: string): string => {
-  const date = toZonedTime(toDate(+timestamp), 'UTC');
-  const formattedDate = format(date, "do MMMM 'at' HH:mm", { timeZone: 'UTC' });
-  return formattedDate;
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const gameSessionDate = new Intl.DateTimeFormat('en-gb', {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+    timeZone: userTimezone,
+  }).format(+timestamp);
+
+  return gameSessionDate.replace(',', ' at');
 };
 
 export const getPipClasses = (pipsAmount: number, index: number) => {
