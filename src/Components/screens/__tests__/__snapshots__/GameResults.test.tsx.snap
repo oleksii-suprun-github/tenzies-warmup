@@ -39,8 +39,9 @@ exports[`GameResults > should render a component with default props 1`] = `
     </p>
   </div>
   <button
-    class="btn btn-primary mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
+    class="btn btn-primary  tooltip-top mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
     data-testid="roll-dice-button"
+    data-tip="Please select all equal dice before rolling."
   >
     Start again
   </button>

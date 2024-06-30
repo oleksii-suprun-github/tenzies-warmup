@@ -117,7 +117,7 @@ exports[`GameDescription > should render a component with records table 1`] = `
     </h2>
     <select
       class="select select-bordered"
-      id="difficulty-selector"
+      data-testid="difficulty-selector"
       name="difficulty"
     >
       <option
@@ -139,8 +139,9 @@ exports[`GameDescription > should render a component with records table 1`] = `
     </select>
   </section>
   <button
-    class="btn btn-primary mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
+    class="btn btn-primary  tooltip-top mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
     data-testid="roll-dice-button"
+    data-tip="Please select all equal dice before rolling."
   >
     Start the game
   </button>
@@ -175,7 +176,7 @@ exports[`GameDescription > should render a component without records table 1`] =
     </h2>
     <select
       class="select select-bordered"
-      id="difficulty-selector"
+      data-testid="difficulty-selector"
       name="difficulty"
     >
       <option
@@ -197,8 +198,9 @@ exports[`GameDescription > should render a component without records table 1`] =
     </select>
   </section>
   <button
-    class="btn btn-primary mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
+    class="btn btn-primary  tooltip-top mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
     data-testid="roll-dice-button"
+    data-tip="Please select all equal dice before rolling."
   >
     Start the game
   </button>

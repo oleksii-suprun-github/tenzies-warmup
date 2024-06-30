@@ -29,6 +29,8 @@ const App = () => {
 
   const [isGameWon, setGameWon] = useState<boolean>(false);
   const [isGameStarted, setGameStarted] = useState<boolean>(false);
+  const [isAllDiceEqual, setIsAllDiceEqual] = useState<boolean>(false);
+  const [isAllDiceSelected, setIsAllDiceSelected] = useState<boolean>(false);
 
   const [recordsList, setRecordsList] = useState(
     (recordsFromStorage && JSON.parse(recordsFromStorage)) || [],
@@ -48,11 +50,6 @@ const App = () => {
 
   useEffect(() => {
     if (isGameStarted && !isGameWon) {
-      const firstDieValue = allDice[0]?.value;
-      const isAllDiceEqual = allDice.every(
-        (die) => die.value === firstDieValue && die.isHeld === true,
-      );
-
       checkAndSetGameWonForCypress(
         allDice,
         setGameWon,
@@ -62,7 +59,11 @@ const App = () => {
         gameClicks,
       );
 
-      if (isAllDiceEqual) {
+      const firstDieValue = allDice[0]?.value;
+      setIsAllDiceEqual(allDice.every((die) => die.value === firstDieValue));
+      setIsAllDiceSelected(allDice.every((die) => die.isHeld === true));
+
+      if (isAllDiceEqual && isAllDiceSelected) {
         setRecordsList((prevRecordsList) =>
           filterRecordsASC([
             {
@@ -75,12 +76,20 @@ const App = () => {
             ...prevRecordsList,
           ]),
         );
-
         setGameWon(true);
         setDifficulty(Difficulties[1]);
       }
     }
-  }, [allDice, difficulty.label, gameClicks, gameTime, isGameStarted, isGameWon]);
+  }, [
+    allDice,
+    difficulty.label,
+    gameClicks,
+    gameTime,
+    isAllDiceEqual,
+    isAllDiceSelected,
+    isGameStarted,
+    isGameWon,
+  ]);
 
   useEffect(() => {
     if (isGameWon) {
@@ -137,6 +146,7 @@ const App = () => {
               isGameStarted={isGameStarted}
               isGameWon={isGameWon}
               difficulty={difficulty}
+              isRollDisabled={isAllDiceSelected && !isAllDiceEqual}
               holdDieHandler={holdDieHandler}
               rollDicesHandler={rollDicesHandler}
             />

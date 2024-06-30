@@ -3,7 +3,9 @@ import { orderBy, take } from 'lodash-es';
 
 declare global {
   interface Window {
-    Cypress?: any;
+    Cypress?: {
+      env: any;
+    };
   }
 }
 
@@ -53,13 +55,13 @@ export const getGameSessionTime = (timestamp: string): string => {
 export const getPipClasses = (pipsAmount: number, index: number) => {
   switch (pipsAmount) {
     case 4:
-      if (index === 2) return 'bottom-[-61px] left-[-32px]';
-      if (index === 4) return 'right-[-31px]';
+      if (index === 2) return 'relative bottom-[-61px] left-[-32px]';
+      if (index === 4) return 'relative right-[-31px]';
       break;
     case 5:
-      if (index === 2) return 'top-[30px]';
-      if (index === 4) return 'left-[-15px]';
-      if (index === 5) return 'right-[-15px]';
+      if (index === 2) return 'relative top-[30px]';
+      if (index === 4) return 'relative left-[-15px]';
+      if (index === 5) return 'relative right-[-15px]';
       break;
     default:
       return '';
@@ -67,6 +69,9 @@ export const getPipClasses = (pipsAmount: number, index: number) => {
   return '';
 };
 
+/**
+ * This function is designed to work only with Cypress for end-to-end testing. It is not used in production build.
+ */
 export const checkAndSetGameWonForCypress = (
   allDice: Dice[],
   setGameWon: (value: boolean) => void,
@@ -75,7 +80,11 @@ export const checkAndSetGameWonForCypress = (
   gameTime: number,
   gameClicks: number,
 ): void => {
-  if (window?.Cypress && import.meta.env.DEV && allDice.every((die) => die.isHeld)) {
+  if (
+    window?.Cypress?.env('skipRollDice') &&
+    import.meta.env.DEV &&
+    allDice.every((die) => die.isHeld)
+  ) {
     setGameWon(true);
     setRecordsList((prevRecordsList) =>
       filterRecordsASC([

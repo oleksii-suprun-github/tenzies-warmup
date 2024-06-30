@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import Header from '../Header';
 import Die from '../Die';
 import RollDiceButton from '../RollDiceButton';
@@ -6,13 +5,20 @@ import RollDiceButton from '../RollDiceButton';
 export interface BoardProps {
   allDice: Dice[];
   difficulty: GameDifficulty;
+  isRollDisabled: boolean;
   isGameWon: boolean;
   isGameStarted: boolean;
   rollDicesHandler: () => void;
-  holdDieHandler: Function;
+  holdDieHandler: (arg: string) => void;
 }
 
-const Board: FC<BoardProps> = ({ allDice, difficulty, rollDicesHandler, holdDieHandler }) => {
+const Board = ({
+  allDice,
+  difficulty,
+  isRollDisabled = false,
+  rollDicesHandler,
+  holdDieHandler,
+}: BoardProps) => {
   const dice = allDice.map((die) => (
     <Die
       key={die.id}
@@ -39,7 +45,13 @@ const Board: FC<BoardProps> = ({ allDice, difficulty, rollDicesHandler, holdDieH
             {dice}
           </div>
         )}
-        <RollDiceButton onClick={rollDicesHandler}>Roll</RollDiceButton>
+        <RollDiceButton
+          disabled={isRollDisabled}
+          isAllOddSelected={false}
+          onClick={rollDicesHandler}
+        >
+          Roll
+        </RollDiceButton>
       </section>
     </>
   );

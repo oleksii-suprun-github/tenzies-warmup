@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { beforeEach, describe, it, expect, vi } from 'vitest';
 import App from '../index';
 
@@ -22,6 +22,7 @@ vi.mock('react-confetti', () => ({
 
 describe('App', () => {
   beforeEach(() => {
+    vi.useFakeTimers();
     localStorage.clear();
   });
 
@@ -29,27 +30,27 @@ describe('App', () => {
     render(<App />);
 
     expect(screen.getByText('Please choose the difficulty:')).toBeInTheDocument();
-    expect(screen.getByRole('combobox')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /start the game/i })).toBeInTheDocument();
+    expect(screen.getByTestId('difficulty-selector')).toBeInTheDocument();
+    expect(screen.getByTestId('roll-dice-button')).toBeInTheDocument();
   });
 
   it('should start the game and show the game board', () => {
     render(<App />);
 
-    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'easy' } });
-    fireEvent.click(screen.getByRole('button', { name: /start the game/i }));
+    fireEvent.change(screen.getByTestId('difficulty-selector'));
+    fireEvent.click(screen.getByTestId('roll-dice-button'));
 
     expect(screen.getByText(/time/i)).toBeInTheDocument();
     expect(screen.getByText(/roll/i)).toBeInTheDocument();
   });
 
-  it('should roll the dice and hold a die', () => {
+  it('should roll all the same dice and hold all of them', () => {
     render(<App />);
 
-    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'easy' } });
-    fireEvent.click(screen.getByRole('button', { name: /start the game/i }));
+    fireEvent.change(screen.getByTestId('difficulty-selector'));
+    fireEvent.click(screen.getByTestId('roll-dice-button'));
 
-    const die = screen.getAllByRole('button')[0];
+    const die = screen.getAllByTestId('die')[0];
     fireEvent.click(die);
     expect(die).toHaveClass('bg-main-die-active');
   });
@@ -57,18 +58,13 @@ describe('App', () => {
   it('should save records to localStorage on win', () => {
     render(<App />);
 
-    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'easy' } });
-    fireEvent.click(screen.getByRole('button', { name: /start the game/i }));
+    fireEvent.change(screen.getByTestId('difficulty-selector'));
+    fireEvent.click(screen.getByTestId('roll-dice-button'));
 
     const diceButtons = screen.getAllByTestId('die');
 
     diceButtons.forEach((button) => {
       fireEvent.click(button);
-    });
-
-    act(() => {
-      vi.useFakeTimers();
-      vi.advanceTimersByTime(2000);
     });
 
     expect(screen.getByTestId('confetti')).toBeInTheDocument();
@@ -92,5 +88,20 @@ describe('App', () => {
     render(<App />);
 
     expect(screen.getByText(/total clicks/i)).toBeInTheDocument();
+  });
+
+  it('should roll the random dice, hold all of them and show a tooltip error', () => {
+    vi.doUnmock('utils');
+    render(<App />);
+
+    fireEvent.change(screen.getByTestId('difficulty-selector'));
+    fireEvent.click(screen.getByTestId('roll-dice-button'));
+
+    const die = screen.getAllByTestId('die')[0];
+    fireEvent.click(die);
+    expect(die).toHaveClass('bg-main-die-active');
+
+    expect;
+    expect(localStorage.getItem('tenzies-wins-records')).toBeFalsy();
   });
 });

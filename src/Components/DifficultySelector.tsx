@@ -7,7 +7,7 @@ const DifficultySelector: FC<{ difficultyHandler: Function }> = ({ difficultyHan
     </h2>
     <select
       name="difficulty"
-      id="difficulty-selector"
+      data-testid="difficulty-selector"
       className="select select-bordered"
       onChange={(e) => difficultyHandler(e.target.value)}
       defaultValue="normal"

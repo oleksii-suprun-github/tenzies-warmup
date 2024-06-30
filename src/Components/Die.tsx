@@ -22,7 +22,7 @@ const Die = ({ holdDieHandler, isHeld, value: pipsAmount }: DieProps) => {
 
   return (
     <button
-      className={`flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] ${hasHeldClass}`}
+      className={`relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] ${hasHeldClass}`}
       onClick={holdDieHandler}
       data-testid={`die`}
     >

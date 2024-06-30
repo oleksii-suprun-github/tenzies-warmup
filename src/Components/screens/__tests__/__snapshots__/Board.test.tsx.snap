@@ -21,7 +21,7 @@ exports[`Board > should render a component with default props 1`] = `
       id="dice-container"
     >
       <button
-        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
+        class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
         <div
@@ -29,24 +29,24 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
-        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
+        class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
         <div
           class="h-2.5 w-2.5 rounded-[50%] bg-black pips-4 pip-index-1 "
         />
         <div
-          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-4 pip-index-2 bottom-[-61px] left-[-32px]"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-4 pip-index-2 relative bottom-[-61px] left-[-32px]"
         />
         <div
           class="h-2.5 w-2.5 rounded-[50%] bg-black pips-4 pip-index-3 "
         />
         <div
-          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-4 pip-index-4 right-[-31px]"
+          class="h-2.5 w-2.5 rounded-[50%] bg-black pips-4 pip-index-4 relative right-[-31px]"
         />
       </button>
       <button
-        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
+        class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
         <div
@@ -57,7 +57,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
-        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
+        class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
         <div
@@ -68,7 +68,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
-        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
+        class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
         <div
@@ -82,7 +82,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
-        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
+        class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
         <div
@@ -96,7 +96,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
-        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
+        class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
         <div
@@ -107,7 +107,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
-        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
+        class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
         <div
@@ -121,7 +121,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
-        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
+        class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
         <div
@@ -135,7 +135,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
-        class="flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
+        class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
         <div
@@ -159,8 +159,9 @@ exports[`Board > should render a component with default props 1`] = `
       </button>
     </div>
     <button
-      class="btn btn-primary mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
+      class="btn btn-primary  tooltip-top mx-auto my-[25px] mt-[50px] w-fit min-w-32 bg-main-button text-2xl text-main-die"
       data-testid="roll-dice-button"
+      data-tip="Please select all equal dice before rolling."
     >
       Roll
     </button>
