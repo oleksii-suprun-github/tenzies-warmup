@@ -1,139 +1,29 @@
-import { useState, useEffect } from 'react';
-import Confetti from 'react-confetti';
-import { nanoid } from 'nanoid';
 import { useWindowSize } from 'usehooks-ts';
-
-import {
-  Difficulties,
-  checkAndSetGameWonForCypress,
-  diceHoldHandler,
-  filterRecordsASC,
-  setNewDiceSet,
-} from 'utils';
+import Confetti from 'react-confetti';
 
 import GameDescription from './screens/GameDescription';
 import GameResults from './screens/GameResults';
 import Board from './screens/Board';
-
 import GameTimer from './GameTimer';
 
-const App = () => {
-  const STORAGE_VARIABLE = 'tenzies-wins-records';
-  const recordsFromStorage = localStorage.getItem(STORAGE_VARIABLE);
+import useGameLogic from '../hooks/useGameLogic';
 
+const TenziesGame = () => {
   const { width, height } = useWindowSize();
-
-  const [difficulty, setDifficulty] = useState<GameDifficulty>(Difficulties[1]);
-
-  const [allDice, setAllDice] = useState<Dice[]>([]);
-
-  const [isGameWon, setGameWon] = useState<boolean>(false);
-  const [isGameStarted, setGameStarted] = useState<boolean>(false);
-  const [isAllDiceEqual, setIsAllDiceEqual] = useState<boolean>(false);
-  const [isAllDiceSelected, setIsAllDiceSelected] = useState<boolean>(false);
-
-  const [recordsList, setRecordsList] = useState(
-    (recordsFromStorage && JSON.parse(recordsFromStorage)) || [],
-  );
-  const [gameTime, setGameTime] = useState<number>(0);
-  const [gameClicks, setGameClicks] = useState<number>(0);
-
-  useEffect(() => {
-    let gameTimer;
-    if (isGameStarted && !isGameWon) {
-      gameTimer = setInterval(() => {
-        setGameTime((prevGameTime) => prevGameTime + 1);
-      }, 1000);
-    }
-    return () => clearInterval(gameTimer);
-  }, [isGameStarted, isGameWon]);
-
-  useEffect(() => {
-    if (isGameStarted && !isGameWon) {
-      checkAndSetGameWonForCypress(
-        allDice,
-        setGameWon,
-        setRecordsList,
-        difficulty,
-        gameTime,
-        gameClicks,
-      );
-
-      const firstDieValue = allDice[0]?.value;
-      setIsAllDiceEqual(allDice.every((die) => die.value === firstDieValue));
-      setIsAllDiceSelected(allDice.every((die) => die.isHeld === true));
-
-      if (isAllDiceEqual && isAllDiceSelected) {
-        setRecordsList((prevRecordsList) =>
-          filterRecordsASC([
-            {
-              id: nanoid(),
-              date: Date.now().toString(),
-              difficultyLabel: difficulty.label,
-              gameTime: gameTime,
-              gameClicks: gameClicks,
-            },
-            ...prevRecordsList,
-          ]),
-        );
-        setGameWon(true);
-        setDifficulty(Difficulties[1]);
-      }
-    }
-  }, [
+  const {
+    difficulty,
     allDice,
-    difficulty.label,
-    gameClicks,
-    gameTime,
+    isGameWon,
+    isGameStarted,
     isAllDiceEqual,
     isAllDiceSelected,
-    isGameStarted,
-    isGameWon,
-  ]);
-
-  useEffect(() => {
-    if (isGameWon) {
-      localStorage.setItem(STORAGE_VARIABLE, JSON.stringify(recordsList));
-    }
-  }, [recordsList, isGameWon]);
-
-  function difficultyHandler(difficultyLabel) {
-    setDifficulty(Difficulties.find((item) => item.label === difficultyLabel) || Difficulties[1]);
-  }
-
-  function rollDicesHandler() {
-    if (isGameStarted) {
-      setAllDice((prevAllDice) => {
-        if (isGameWon) {
-          setGameWon(false);
-          setGameStarted(false);
-          return [];
-        } else {
-          return diceHoldHandler(prevAllDice);
-        }
-      });
-    } else {
-      setGameStarted(true);
-      setGameTime(0);
-      setGameClicks(0);
-      setAllDice(setNewDiceSet(difficulty.value));
-    }
-  }
-
-  function holdDieHandler(id) {
-    setGameClicks((prevClicks) => prevClicks + 1);
-    setAllDice((prevAllDice) =>
-      prevAllDice.map((die) => {
-        if (die.id === id) {
-          return {
-            ...die,
-            isHeld: !die.isHeld,
-          };
-        }
-        return die;
-      }),
-    );
-  }
+    recordsList,
+    gameTime,
+    gameClicks,
+    difficultyHandler,
+    rollDicesHandler,
+    holdDieHandler,
+  } = useGameLogic();
 
   return (
     <div className="flex min-h-svh justify-center bg-main-bg">
@@ -171,4 +61,5 @@ const App = () => {
     </div>
   );
 };
-export default App;
+
+export default TenziesGame;
