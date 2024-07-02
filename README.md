@@ -83,6 +83,8 @@ To preview the production build, run:
 - `react-confetti`: ^6.1.0
 - `react-dom`: ^18.3.1
 - `usehooks-ts`: ^3.1.0
+- `i18next`: "^23.11.5"
+- `i18next-browser-languagedetector`: "^8.0.0",
 
 ## Dev Dependencies
 

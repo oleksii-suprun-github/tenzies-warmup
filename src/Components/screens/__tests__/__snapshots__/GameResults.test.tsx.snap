@@ -24,17 +24,21 @@ exports[`GameResults > should render a component with default props 1`] = `
     <p
       class="mb-2.5"
     >
-      Total Time: 
+      You won the game!
+      :
       <strong>
         19
-         seconds
+         
+        seconds
       </strong>
     </p>
     <p>
-      Total Clicks: 
+      You won the game!
+      :
       <strong>
         9
-         clicks
+         
+        clicks
       </strong>
     </p>
   </div>

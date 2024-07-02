@@ -7,7 +7,7 @@ describe(
   },
   () => {
     beforeEach(() => {
-      cy.visit(Cypress.env('DEV_URL'));
+      cy.setApplicationLanguage();
       cy.get('select').select('easy');
       cy.wait(500);
       cy.get('select').select('hard');
@@ -48,6 +48,35 @@ describe(
         cy.wrap($die).click();
       });
       cy.contains('Congratulations').should('be.visible');
+    });
+  },
+);
+
+describe(
+  'Game Board Interaction - German localization test',
+  {
+    env: {
+      skipRollDice: true,
+    },
+  },
+  () => {
+    beforeEach(() => {
+      cy.setApplicationLanguage('de-DE');
+      cy.get('select').select('easy');
+      cy.get('[data-testid="roll-dice-button"]').contains('Spiel starten').click();
+    });
+
+    it('should roll the dice when roll button is clicked', () => {
+      cy.get('[data-testid="roll-dice-button"]').contains('Würfeln').click();
+      cy.get('[data-testid="die"]').should('have.length', 5);
+    });
+
+    it('should win the game when all dice are held', () => {
+      cy.get('[data-testid="die"]').each(($die) => {
+        cy.wait(300);
+        cy.wrap($die).click();
+      });
+      cy.contains('Herzlichen Glückwunsch').should('be.visible');
     });
   },
 );

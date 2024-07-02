@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import Header from '../Header';
 import Die from '../Die';
 import RollDiceButton from '../RollDiceButton';
@@ -19,6 +20,7 @@ const Board = ({
   rollDicesHandler,
   holdDieHandler,
 }: BoardProps) => {
+  const { t } = useTranslation();
   const dice = allDice.map((die) => (
     <Die
       key={die.id}
@@ -34,7 +36,10 @@ const Board = ({
         <h1
           data-testid="board-headline"
           className="mb-12 mt-12 text-4xl font-extrabold leading-none"
-        >{`Match ${difficulty.value} dice`}</h1>
+        >
+          {' '}
+          {t('game.board.headline', { difficulty: difficulty.value })}
+        </h1>
       </Header>
       <section className="justify-center; flex w-full flex-col items-center">
         {dice && (
@@ -50,7 +55,7 @@ const Board = ({
           isAllOddSelected={false}
           onClick={rollDicesHandler}
         >
-          Roll
+          {t('game.rollDice')}
         </RollDiceButton>
       </section>
     </>

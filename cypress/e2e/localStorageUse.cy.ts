@@ -9,7 +9,7 @@ describe(
     const STORAGE_KEY = 'tenzies-wins-records';
 
     it('should store game records in local storage', () => {
-      cy.visit(Cypress.env('DEV_URL'));
+      cy.setApplicationLanguage();
       cy.startGameAndWin();
       cy.wait(1500);
       cy.reload();
@@ -31,7 +31,7 @@ describe(
         },
       ];
       localStorage.setItem(STORAGE_KEY, JSON.stringify(dummyRecord));
-      cy.visit(Cypress.env('DEV_URL'));
+      cy.setApplicationLanguage();
       cy.get('[data-testid="records-list"]').should('have.length', 1);
     });
   },

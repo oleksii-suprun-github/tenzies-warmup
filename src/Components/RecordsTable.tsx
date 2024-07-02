@@ -1,7 +1,9 @@
-import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import RecordElement from './RecordElement';
 
-const RecordsTable: FC<{ data: GameRecord[] }> = ({ data: records }) => {
+const RecordsTable = ({ data: records }: { data: GameRecord[] }) => {
+  const { t } = useTranslation();
+
   const recordsElements = records.map((record, index) => (
     <RecordElement key={record.id} data={record} index={index} />
   ));
@@ -12,7 +14,7 @@ const RecordsTable: FC<{ data: GameRecord[] }> = ({ data: records }) => {
       id="records-list"
       className="mt-[50px] flex w-full flex-col items-center justify-center"
     >
-      <h2 className="mb-4 text-center text-xl font-extrabold">Top 5 results:</h2>
+      <h2 className="mb-4 text-center text-xl font-extrabold">{t('game.records.headline')}:</h2>
       <div
         data-testid="records-table"
         id="records-table-responsive-wrapper"
@@ -23,15 +25,17 @@ const RecordsTable: FC<{ data: GameRecord[] }> = ({ data: records }) => {
           <thead className="bg-main-button text-main-die">
             <tr className="border-separate text-center">
               <th className="border-main-board-color border border-gray-400 text-base">#</th>
-              <th className="border-main-board-color border border-gray-400 text-base">Date</th>
               <th className="border-main-board-color border border-gray-400 text-base">
-                Difficulty
+                {t('game.records.date')}
               </th>
               <th className="border-main-board-color border border-gray-400 text-base">
-                Total clicks
+                {t('game.records.date')}
               </th>
               <th className="border-main-board-color border border-gray-400 text-base">
-                Total time
+                {t('game.records.totalClicks')}
+              </th>
+              <th className="border-main-board-color border border-gray-400 text-base">
+                {t('game.records.totalTime')}
               </th>
             </tr>
           </thead>

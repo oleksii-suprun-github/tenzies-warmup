@@ -10,6 +10,7 @@ exports[`Board > should render a component with default props 1`] = `
       class="mb-12 mt-12 text-4xl font-extrabold leading-none"
       data-testid="board-headline"
     >
+       
       Match 10 dice
     </h1>
   </header>
