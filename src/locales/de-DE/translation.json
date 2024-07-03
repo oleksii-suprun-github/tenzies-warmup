@@ -17,6 +17,7 @@
   "game.congratulation.totalTime": "Gesamtzeit",
   "game.records.headline": "Top 5 Ergebnisse",
   "game.records.date": "Datum",
+  "game.records.at": "um",
   "game.records.difficulty": "Schwierigkeitsgrad",
   "game.records.totalClicks": "Gesamtklicks",
   "game.records.totalTime": "Gesamtzeit"

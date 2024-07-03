@@ -21,13 +21,13 @@ const GameResults = ({ timeTotal, clicksTotal, restartHandler }: GameResultsProp
       </Header>
       <div id="results" className="mx-auto my-0 mt-[50px]">
         <p className="mb-2.5">
-          {t('game.congratulation.totalTime')}:
+          {t('game.congratulation.totalTime')}:&nbsp;
           <strong>
             {timeTotal} {t('seconds')}
           </strong>
         </p>
         <p>
-          {t('game.congratulation.totalClicks')}:
+          {t('game.congratulation.totalClicks')}:&nbsp;
           <strong>
             {clicksTotal} {t('clicks')}
           </strong>

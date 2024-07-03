@@ -8,6 +8,7 @@ describe(
   () => {
     beforeEach(() => {
       cy.setApplicationLanguage();
+      cy.wait(500);
     });
 
     it('should display the game description initially', () => {
@@ -23,7 +24,12 @@ describe(
 
     it('should allow setting the game difficulty', () => {
       cy.get('select').select('normal');
-      cy.get('[data-testid="roll-dice-button"]').contains('Start').click();
+    });
+
+    it('should allow switching the language to German and start the game', () => {
+      cy.get('[data-testid="language-switcher"]').click();
+      cy.wait(1500);
+      cy.get('[data-testid="roll-dice-button"]').contains('Spiel starten').click();
       cy.get('[data-testid="die"]').should('have.length', 10);
     });
   },

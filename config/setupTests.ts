@@ -15,7 +15,7 @@ const interpolate = (str, vars) => {
   return str.replace(/\{\{(\w+)\}\}/g, (_, key) => vars[key] || '');
 };
 
-vi.mock('react-i18next', () => {
+vi.mock('react-i18next', async () => {
   return {
     useTranslation: () => ({
       t: (key, vars) => {
@@ -29,5 +29,9 @@ vi.mock('react-i18next', () => {
         },
       },
     }),
+    initReactI18next: {
+      type: '3rdParty',
+      init: () => {},
+    },
   };
 });

@@ -17,6 +17,7 @@
   "game.congratulation.totalTime": "Total Time",
   "game.records.headline": "Top 5 results",
   "game.records.date": "Date",
+  "game.records.at": "at",
   "game.records.difficulty": "Difficulty",
   "game.records.totalClicks": "Total clicks",
   "game.records.totalTime": "Total time"

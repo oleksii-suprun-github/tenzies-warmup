@@ -31,6 +31,7 @@ describe('App', () => {
 
     expect(screen.getByText('Please choose the difficulty:')).toBeInTheDocument();
     expect(screen.getByTestId('difficulty-selector')).toBeInTheDocument();
+    fireEvent.click(screen.getByTestId('language-switcher'));
     expect(screen.getByTestId('roll-dice-button')).toBeInTheDocument();
   });
 

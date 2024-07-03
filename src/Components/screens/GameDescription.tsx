@@ -12,9 +12,21 @@ export interface GameDescriptionProps {
 }
 
 const GameDescription = ({ startHandler, difficultyHandler, records }: GameDescriptionProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const onClickHandler = () => {
+    i18n.changeLanguage(i18n.language === 'en-GB' ? 'de-DE' : 'en-GB');
+  };
+
   return (
     <>
+      <button
+        data-testid="language-switcher"
+        onClick={onClickHandler}
+        className="btn ml-auto flex w-auto justify-end text-3xl xs-xl:absolute xs-xl:right-[10px] xs-xl:top-[10px] xl:static"
+      >
+        {i18n.language === 'en-GB' ? '🇩🇪' : '🇬🇧'}
+      </button>
       <Header>
         <h1 className="mb-6 mt-5 text-4xl font-extrabold leading-none">🎲 Tenzies</h1>
         <p className="text-lg">{t('game.description')}</p>

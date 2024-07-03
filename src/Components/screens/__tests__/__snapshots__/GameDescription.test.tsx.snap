@@ -2,6 +2,12 @@
 
 exports[`GameDescription > should render a component with records table 1`] = `
 <div>
+  <button
+    class="btn ml-auto flex w-auto justify-end text-3xl xs-xl:absolute xs-xl:right-[10px] xs-xl:top-[10px] xl:static"
+    data-testid="language-switcher"
+  >
+    🇬🇧
+  </button>
   <header
     class="text-center"
     id="header"
@@ -84,7 +90,7 @@ exports[`GameDescription > should render a component with records table 1`] = `
             <td
               class="border-main-board-color border border-gray-400 p-1.5"
             >
-              19 Jun 2024 at 17:44
+              Jun 19 at 2024, 5:44 PM
             </td>
             <td
               class="border-main-board-color border border-gray-400 p-1.5"
@@ -108,7 +114,7 @@ exports[`GameDescription > should render a component with records table 1`] = `
     </div>
   </section>
   <section
-    class="mt=[35px] justify-center; flex w-full flex-col items-center"
+    class="mt=[35px] flex w-full flex-col items-center justify-center"
     id="difficulty"
   >
     <h2
@@ -152,6 +158,12 @@ exports[`GameDescription > should render a component with records table 1`] = `
 
 exports[`GameDescription > should render a component without records table 1`] = `
 <div>
+  <button
+    class="btn ml-auto flex w-auto justify-end text-3xl xs-xl:absolute xs-xl:right-[10px] xs-xl:top-[10px] xl:static"
+    data-testid="language-switcher"
+  >
+    🇬🇧
+  </button>
   <header
     class="text-center"
     id="header"
@@ -168,7 +180,7 @@ exports[`GameDescription > should render a component without records table 1`] =
     </p>
   </header>
   <section
-    class="mt=[35px] justify-center; flex w-full flex-col items-center"
+    class="mt=[35px] flex w-full flex-col items-center justify-center"
     id="difficulty"
   >
     <h2

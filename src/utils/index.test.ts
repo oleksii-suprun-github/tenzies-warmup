@@ -76,7 +76,7 @@ describe('filterRecordsASC', () => {
 describe('getGameSessionTime', () => {
   it('should return the formatted date string', () => {
     const timestamp = '1717013873000';
-    const formattedTime = getGameSessionTime(timestamp);
+    const formattedTime = getGameSessionTime(timestamp, 'en-GB');
     expect(formattedTime).toBe('29 May 2024 at 22:17');
   });
 });

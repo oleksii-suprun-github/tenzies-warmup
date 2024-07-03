@@ -7,6 +7,7 @@ export default {
       sm: '601px',
       'xs-md': { min: '320px', max: '767px' },
       'sm-md': { min: '450px', max: '767px' },
+      'xs-xl': { min: '320px', max: '1366px' },
       md: '768px',
       lg: '1024px',
       xl: '1366px',

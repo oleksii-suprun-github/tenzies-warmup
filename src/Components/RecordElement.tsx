@@ -1,9 +1,10 @@
-import { FC } from 'react';
 import capitalize from 'lodash-es/capitalize';
+import { useTranslation } from 'react-i18next';
 import { getGameSessionTime } from '../utils';
 
-const RecordElement: FC<{ data: GameRecord; index: number }> = ({ data, index }) => {
-  const gameSessionTime = getGameSessionTime(data.date);
+const RecordElement = ({ data, index }: { key: string; data: GameRecord; index: number }) => {
+  const { i18n } = useTranslation();
+  const gameSessionTime = getGameSessionTime(data.date, i18n.language);
 
   return (
     <tr className="record-element bg-white">

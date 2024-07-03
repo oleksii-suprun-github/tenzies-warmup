@@ -1,7 +1,6 @@
 import { nanoid } from 'nanoid';
-import fs from 'fs';
-import path from 'path';
 import { orderBy, take } from 'lodash-es';
+import i18n from '../i18n';
 
 declare global {
   interface Window {
@@ -43,15 +42,15 @@ export const diceHoldHandler = (dice) =>
 export const filterRecordsASC = (records: GameRecord[]) =>
   take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
 
-export const getGameSessionTime = (timestamp: string): string => {
+export const getGameSessionTime = (timestamp: string, lang: string): string => {
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const gameSessionDate = new Intl.DateTimeFormat('en-gb', {
+  const gameSessionDate = new Intl.DateTimeFormat(lang, {
     dateStyle: 'medium',
     timeStyle: 'short',
     timeZone: userTimezone,
   }).format(+timestamp);
 
-  return gameSessionDate.replace(',', ' at');
+  return gameSessionDate.replace(',', ` ${i18n.t('game.records.at')}`);
 };
 
 export const getPipClasses = (pipsAmount: number, index: number) => {
