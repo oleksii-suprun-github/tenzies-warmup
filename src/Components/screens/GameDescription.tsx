@@ -23,7 +23,8 @@ const GameDescription = ({ startHandler, difficultyHandler, records }: GameDescr
       <button
         data-testid="language-switcher"
         onClick={onClickHandler}
-        className="btn ml-auto flex w-auto justify-end text-3xl xs-xl:absolute xs-xl:right-[10px] xs-xl:top-[10px] xl:static"
+        className="btn ml-auto flex w-auto justify-end bg-main-board text-3xl shadow-none xs-xl:absolute xs-xl:right-[10px] xs-xl:top-[10px] xl:static"
+        aria-label={`${t('game.aria.langSwitcher')}`}
       >
         {i18n.language === 'en-GB' ? '🇩🇪' : '🇬🇧'}
       </button>

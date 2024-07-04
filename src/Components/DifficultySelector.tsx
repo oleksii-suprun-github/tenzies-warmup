@@ -12,6 +12,7 @@ const DifficultySelector = ({ difficultyHandler }: { difficultyHandler: Function
         data-testid="difficulty-selector"
         className="select select-bordered"
         onChange={(e) => difficultyHandler(e.target.value)}
+        aria-label={`${t('game.difficulty.aria.label')}`}
         defaultValue="normal"
       >
         <option value="easy">{t('game.difficulty.label.easy')}</option>

@@ -1,4 +1,5 @@
 import { MouseEventHandler, Key, JSX } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getPipClasses } from 'utils';
 
 export interface DieProps {
@@ -9,6 +10,8 @@ export interface DieProps {
 }
 
 const Die = ({ holdDieHandler, isHeld, value: pipsAmount }: DieProps) => {
+  const { t } = useTranslation();
+
   const hasHeldClass = isHeld ? 'bg-main-die-active' : '';
   let diePips: JSX.Element[] = [];
   for (let i = 1; i <= pipsAmount; i++) {
@@ -25,6 +28,7 @@ const Die = ({ holdDieHandler, isHeld, value: pipsAmount }: DieProps) => {
       className={`relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] ${hasHeldClass}`}
       onClick={holdDieHandler}
       data-testid={`die`}
+      aria-label={`${t('game.board.die.aria.label', { count: pipsAmount })}`}
     >
       {diePips}
     </button>

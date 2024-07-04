@@ -7,6 +7,7 @@ describe('DifficultySelector', () => {
     render(<DifficultySelector difficultyHandler={difficultyHandler} />);
 
     expect(screen.getByText('Please choose the difficulty:')).toBeInTheDocument();
+    expect(screen.getByLabelText('Difficulty level')).toBeInTheDocument();
     expect(screen.getByTestId('difficulty-selector')).toBeInTheDocument();
     expect(screen.getByRole('option', { name: 'Easy' })).toBeInTheDocument();
     expect(screen.getByRole('option', { name: 'Normal' })).toBeInTheDocument();

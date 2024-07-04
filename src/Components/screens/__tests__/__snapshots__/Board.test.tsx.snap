@@ -22,6 +22,7 @@ exports[`Board > should render a component with default props 1`] = `
       id="dice-container"
     >
       <button
+        aria-label="Die with 1 pip(s)"
         class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
@@ -30,6 +31,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
+        aria-label="Die with 4 pip(s)"
         class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
@@ -47,6 +49,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
+        aria-label="Die with 2 pip(s)"
         class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
@@ -58,6 +61,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
+        aria-label="Die with 2 pip(s)"
         class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
@@ -69,6 +73,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
+        aria-label="Die with 3 pip(s)"
         class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
@@ -83,6 +88,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
+        aria-label="Die with 3 pip(s)"
         class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
@@ -97,6 +103,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
+        aria-label="Die with 2 pip(s)"
         class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
@@ -108,6 +115,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
+        aria-label="Die with 3 pip(s)"
         class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
@@ -122,6 +130,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
+        aria-label="Die with 3 pip(s)"
         class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >
@@ -136,6 +145,7 @@ exports[`Board > should render a component with default props 1`] = `
         />
       </button>
       <button
+        aria-label="Die with 6 pip(s)"
         class="relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-main-die font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] "
         data-testid="die"
       >

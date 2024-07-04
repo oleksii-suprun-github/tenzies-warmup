@@ -8,7 +8,6 @@ describe(
   () => {
     beforeEach(() => {
       cy.setApplicationLanguage();
-      cy.get('select').select('easy');
       cy.wait(500);
       cy.get('select').select('hard');
       cy.get('[data-testid="roll-dice-button"]').contains('Start the game').click();
@@ -16,6 +15,11 @@ describe(
 
     it('should roll the dice when roll button is clicked', () => {
       cy.get('[data-testid="roll-dice-button"]').contains('Roll').click();
+      cy.get('[data-testid="die"]').each(($el) => {
+        cy.wrap($el)
+          .should('have.attr', 'aria-label')
+          .and('match', /Die with \d+ pip\(s\)/);
+      });
       cy.get('[data-testid="die"]').should('have.length', 15);
     });
 
@@ -69,6 +73,11 @@ describe(
     it('should roll the dice when roll button is clicked', () => {
       cy.get('[data-testid="roll-dice-button"]').contains('Würfeln').click();
       cy.get('[data-testid="die"]').should('have.length', 5);
+      cy.get('[data-testid="die"]').each(($el) => {
+        cy.wrap($el)
+          .should('have.attr', 'aria-label')
+          .and('match', /Würfelseite mit \d+ Punkt\(en\)/);
+      });
     });
 
     it('should win the game when all dice are held', () => {

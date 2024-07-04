@@ -1,8 +1,10 @@
 {
   "seconds": "seconds",
   "clicks": "clicks",
+  "game.aria.langSwitcher": "Change language",
   "game.description": "Roll until all dice are the same. Click each die to freeze it at its current value between rolls.",
   "game.difficulty.headline": "Please choose the difficulty",
+  "game.difficulty.aria.label": "Difficulty level",
   "game.difficulty.label.easy": "Easy",
   "game.difficulty.label.normal": "Normal",
   "game.difficulty.label.hard": "Hard",
@@ -11,6 +13,7 @@
   "game.rollDice": "Roll",
   "game.time": "Time",
   "game.board.headline": "Match {{difficulty}} dice",
+  "game.board.die.aria.label": "Die with {{count}} pip(s)",
   "game.congratulation.headline": "Congratulations",
   "game.congratulation.description": "You won the game!",
   "game.congratulation.totalClicks": "Total Clicks",

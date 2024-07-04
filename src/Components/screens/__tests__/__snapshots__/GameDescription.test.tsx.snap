@@ -3,7 +3,8 @@
 exports[`GameDescription > should render a component with records table 1`] = `
 <div>
   <button
-    class="btn ml-auto flex w-auto justify-end text-3xl xs-xl:absolute xs-xl:right-[10px] xs-xl:top-[10px] xl:static"
+    aria-label="Change language"
+    class="btn ml-auto flex w-auto justify-end bg-main-board text-3xl shadow-none xs-xl:absolute xs-xl:right-[10px] xs-xl:top-[10px] xl:static"
     data-testid="language-switcher"
   >
     🇬🇧
@@ -124,6 +125,7 @@ exports[`GameDescription > should render a component with records table 1`] = `
       :
     </h2>
     <select
+      aria-label="Difficulty level"
       class="select select-bordered"
       data-testid="difficulty-selector"
       name="difficulty"
@@ -159,7 +161,8 @@ exports[`GameDescription > should render a component with records table 1`] = `
 exports[`GameDescription > should render a component without records table 1`] = `
 <div>
   <button
-    class="btn ml-auto flex w-auto justify-end text-3xl xs-xl:absolute xs-xl:right-[10px] xs-xl:top-[10px] xl:static"
+    aria-label="Change language"
+    class="btn ml-auto flex w-auto justify-end bg-main-board text-3xl shadow-none xs-xl:absolute xs-xl:right-[10px] xs-xl:top-[10px] xl:static"
     data-testid="language-switcher"
   >
     🇬🇧
@@ -190,6 +193,7 @@ exports[`GameDescription > should render a component without records table 1`] =
       :
     </h2>
     <select
+      aria-label="Difficulty level"
       class="select select-bordered"
       data-testid="difficulty-selector"
       name="difficulty"

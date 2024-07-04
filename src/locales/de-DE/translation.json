@@ -1,8 +1,10 @@
 {
   "seconds": "Sekunden",
   "clicks": "Klicks",
+  "game.aria.langSwitcher": "Sprache wechseln",
   "game.description": "Würfle, bis alle Würfel gleich sind. Klicke auf jeden Würfel, um ihn während der Würfe auf seinem aktuellen Wert zu fixieren.",
   "game.difficulty.headline": "Bitte wähle den Schwierigkeitsgrad",
+  "game.difficulty.aria.label": "Schwierigkeitsgrad",
   "game.difficulty.label.easy": "Einfach",
   "game.difficulty.label.normal": "Normal",
   "game.difficulty.label.hard": "Schwer",
@@ -12,6 +14,7 @@
   "game.time": "Zeit",
   "game.board.headline": "Passe {{difficulty}} Würfel an",
   "game.congratulation.headline": "Herzlichen Glückwunsch",
+  "game.board.die.aria.label": "Würfelseite mit {{count}} Punkt(en)",
   "game.congratulation.description": "Du hast das Spiel gewonnen!",
   "game.congratulation.totalClicks": "Gesamtklicks",
   "game.congratulation.totalTime": "Gesamtzeit",

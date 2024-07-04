@@ -43,6 +43,7 @@ describe('App', () => {
 
     expect(screen.getByText(/time/i)).toBeInTheDocument();
     expect(screen.getByText(/roll/i)).toBeInTheDocument();
+    expect(screen.getAllByLabelText('Die with 6 pip(s)')).toHaveLength(10);
   });
 
   it('should roll all the same dice and hold all of them', () => {

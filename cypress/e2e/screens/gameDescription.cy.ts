@@ -18,6 +18,11 @@ describe(
     });
 
     it('should start the game when the start button is clicked', () => {
+      cy.get('[data-testid="difficulty-selector"]').should(
+        'have.attr',
+        'aria-label',
+        'Difficulty level',
+      );
       cy.get('[data-testid="roll-dice-button"]').contains('Start').click();
       cy.contains('Time').should('be.visible');
     });
@@ -54,6 +59,11 @@ describe(
     });
 
     it('should start the game when the start button is clicked', () => {
+      cy.get('[data-testid="difficulty-selector"]').should(
+        'have.attr',
+        'aria-label',
+        'Schwierigkeitsgrad',
+      );
       cy.get('[data-testid="roll-dice-button"]').contains('Spiel starten').click();
       cy.contains('Zeit').should('be.visible');
     });
